@@ -10,6 +10,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @AllArgsConstructor
 @RestController
 @RequestMapping(value = "predio")
@@ -98,6 +100,20 @@ public class PredioController {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 
         }
+    }
+
+    @GetMapping("listar")
+    public ResponseEntity<List<Residencial>> listarResidenciales() {
+        System.out.println("Listar Ok");
+        try {
+            List<Residencial> residenciales = servicio.getPrediosResidenciales();
+            System.out.println("Termino de listas");
+            return new ResponseEntity<>(residenciales, HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+
     }
 
     @GetMapping(value = "/healthCheck")

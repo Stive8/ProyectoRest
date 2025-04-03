@@ -49,5 +49,14 @@ namespace Cliente
             form4.Show();
 
         }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            // Crear una instancia del formulario Form2
+            Listar form5 = new Listar();
+
+            // Mostrar el formulario
+            form5.Show();
+        }
     }
 }

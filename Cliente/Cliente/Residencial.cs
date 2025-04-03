@@ -2,7 +2,7 @@
 
 namespace Cliente
 {
-    internal class Residencial
+    public class Residencial
     {
 
         public int Id { get; set; }
