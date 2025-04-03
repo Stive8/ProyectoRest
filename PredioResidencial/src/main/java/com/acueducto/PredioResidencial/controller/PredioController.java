@@ -19,6 +19,9 @@ public class PredioController {
 
     @PostMapping("crear")
     public ResponseEntity<HttpStatus> crearPredio(@RequestBody Request request) {
+
+        System.out.println("Peticion POST");
+
         try {
             Residencial residencial = servicio.crearPredioResidencial(
                     request.getPropietario(),
@@ -40,6 +43,8 @@ public class PredioController {
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+
+
     }
 
     @GetMapping("buscar/{value}")

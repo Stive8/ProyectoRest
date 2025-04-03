@@ -30,5 +30,5 @@ C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Clien
 C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\bin\Debug\System.ValueTuple.xml
 C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.csproj.SuggestedBindingRedirects.cache
 C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.exe.config
-C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.Form2.resources
 C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.csproj.Up2Date
+C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.Crear.resources
