@@ -30,7 +30,7 @@ namespace Cliente
             List<Residencial> residenciales =  await apiService.GetResidencialesAsync();
 
             // Filtrar según los botones seleccionados
-            List<Residencial> filtrados;
+            List<Residencial> filtrados = new List<Residencial>(residenciales);
 
             if (btnActivos.Checked)
             {
@@ -40,9 +40,14 @@ namespace Cliente
             {
                 filtrados = residenciales.Where(red => red.EstadoCuenta.Equals("INAC", StringComparison.OrdinalIgnoreCase)).ToList();
             }
-            else
+
+            if (btnEstratoBajo.Checked)
             {
-                filtrados = residenciales; // Si no hay filtro, mostrar todos
+                filtrados = residenciales.Where(red => red.Estrato >= 1 && red.Estrato <= 3).ToList();
+            }
+            else if (btnEstrtatoAlto.Checked)
+            {
+                filtrados = residenciales.Where(red => red.Estrato >= 4 && red.Estrato <= 6).ToList();
             }
 
             // Asignar la lista filtrada al DataGridView

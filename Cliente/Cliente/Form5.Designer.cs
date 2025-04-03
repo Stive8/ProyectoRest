@@ -32,6 +32,8 @@
             this.btnListar = new System.Windows.Forms.Button();
             this.btnActivos = new System.Windows.Forms.RadioButton();
             this.btnInactivos = new System.Windows.Forms.RadioButton();
+            this.btnEstratoBajo = new System.Windows.Forms.RadioButton();
+            this.btnEstrtatoAlto = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,9 +78,33 @@
             this.btnInactivos.Text = "Inactivos";
             this.btnInactivos.UseVisualStyleBackColor = true;
             // 
+            // btnEstratoBajo
+            // 
+            this.btnEstratoBajo.AutoSize = true;
+            this.btnEstratoBajo.Location = new System.Drawing.Point(185, 279);
+            this.btnEstratoBajo.Name = "btnEstratoBajo";
+            this.btnEstratoBajo.Size = new System.Drawing.Size(85, 17);
+            this.btnEstratoBajo.TabIndex = 6;
+            this.btnEstratoBajo.TabStop = true;
+            this.btnEstratoBajo.Text = "Estrato 1,2,3";
+            this.btnEstratoBajo.UseVisualStyleBackColor = true;
+            // 
+            // btnEstrtatoAlto
+            // 
+            this.btnEstrtatoAlto.AutoSize = true;
+            this.btnEstrtatoAlto.Location = new System.Drawing.Point(288, 279);
+            this.btnEstrtatoAlto.Name = "btnEstrtatoAlto";
+            this.btnEstrtatoAlto.Size = new System.Drawing.Size(85, 17);
+            this.btnEstrtatoAlto.TabIndex = 7;
+            this.btnEstrtatoAlto.TabStop = true;
+            this.btnEstrtatoAlto.Text = "Estrato 4,5,6";
+            this.btnEstrtatoAlto.UseVisualStyleBackColor = true;
+            // 
             // Listar
             // 
             this.ClientSize = new System.Drawing.Size(611, 335);
+            this.Controls.Add(this.btnEstrtatoAlto);
+            this.Controls.Add(this.btnEstratoBajo);
             this.Controls.Add(this.btnInactivos);
             this.Controls.Add(this.btnActivos);
             this.Controls.Add(this.btnListar);
@@ -107,5 +133,7 @@
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.RadioButton btnActivos;
         private System.Windows.Forms.RadioButton btnInactivos;
+        private System.Windows.Forms.RadioButton btnEstratoBajo;
+        private System.Windows.Forms.RadioButton btnEstrtatoAlto;
     }
 }
