@@ -34,3 +34,4 @@ C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Clien
 C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.exe
 C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.pdb
 C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.Eliminar.resources
+C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.GUIActualizar.resources

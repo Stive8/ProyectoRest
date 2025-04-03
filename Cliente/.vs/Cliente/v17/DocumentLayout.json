@@ -1,12 +1,86 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\asus\\documents\\univerisdad\\aplicacionesempresariales\\proyectorest\\cliente\\cliente\\guiactualizar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\guiactualizar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\asus\\documents\\univerisdad\\aplicacionesempresariales\\proyectorest\\cliente\\cliente\\guiactualizar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\guiactualizar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\asus\\documents\\univerisdad\\aplicacionesempresariales\\proyectorest\\cliente\\cliente\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\asus\\documents\\univerisdad\\aplicacionesempresariales\\proyectorest\\cliente\\cliente\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form1.cs",
+              "RelativeDocumentMoniker": "Cliente\\Form1.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form1.cs",
+              "RelativeToolTip": "Cliente\\Form1.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T17:14:17.948Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form1.cs",
+              "RelativeDocumentMoniker": "Cliente\\Form1.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Cliente\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T17:14:07.581Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GUIActualizar.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs",
+              "RelativeDocumentMoniker": "Cliente\\GUIActualizar.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs",
+              "RelativeToolTip": "Cliente\\GUIActualizar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T17:11:14.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GUIActualizar.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs",
+              "RelativeDocumentMoniker": "Cliente\\GUIActualizar.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Cliente\\GUIActualizar.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T17:07:05.8Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
