@@ -15,6 +15,7 @@ namespace Cliente
         public Form1()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen; // Centrar ventana en la pantalla
         }
 
         private void toolStripMenuItem4_Click(object sender, EventArgs e)
@@ -69,6 +70,10 @@ namespace Cliente
 
         }
 
-      
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Integrantes:\n Stiven Alvarez \n Brayhan Ortegon \n Juanita Rodriguez", "Acerca de", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
     }
 }

@@ -3,15 +3,35 @@
   "WorkspaceRootPath": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\asus\\documents\\univerisdad\\aplicacionesempresariales\\proyectorest\\cliente\\cliente\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\cliente\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\asus\\documents\\univerisdad\\aplicacionesempresariales\\proyectorest\\cliente\\cliente\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\cliente\\guiactualizar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\guiactualizar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\cliente\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\asus\\documents\\univerisdad\\aplicacionesempresariales\\proyectorest\\cliente\\cliente\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\asus\\documents\\univerisdad\\aplicacionesempresariales\\proyectorest\\cliente\\cliente\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\asus\\documents\\univerisdad\\aplicacionesempresariales\\proyectorest\\cliente\\cliente\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\cliente\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\asus\\documents\\univerisdad\\aplicacionesempresariales\\proyectorest\\cliente\\cliente\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\cliente\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -19,8 +39,16 @@
       "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\guiactualizar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\asus\\documents\\univerisdad\\aplicacionesempresariales\\proyectorest\\cliente\\cliente\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\cliente\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\cliente\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\cliente\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\cliente\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -38,11 +66,113 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Form3.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form3.cs",
+              "RelativeDocumentMoniker": "Cliente\\Form3.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form3.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Cliente\\Form3.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T20:34:57.235Z",
+              "IsPinned": true,
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Form4.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form4.cs",
+              "RelativeDocumentMoniker": "Cliente\\Form4.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form4.cs",
+              "RelativeToolTip": "Cliente\\Form4.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T21:16:12.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form3.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form3.cs",
+              "RelativeDocumentMoniker": "Cliente\\Form3.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form3.cs",
+              "RelativeToolTip": "Cliente\\Form3.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T21:16:00.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form2.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form2.cs",
+              "RelativeDocumentMoniker": "Cliente\\Form2.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form2.cs",
+              "RelativeToolTip": "Cliente\\Form2.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T21:15:46.03Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GUIActualizar.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs",
+              "RelativeDocumentMoniker": "Cliente\\GUIActualizar.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Cliente\\GUIActualizar.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T20:09:46.63Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Form2.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form2.cs",
+              "RelativeDocumentMoniker": "Cliente\\Form2.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form2.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Cliente\\Form2.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T20:16:42.012Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GUIActualizar.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs",
+              "RelativeDocumentMoniker": "Cliente\\GUIActualizar.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs",
+              "RelativeToolTip": "Cliente\\GUIActualizar.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABMAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T20:56:56.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form5.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form5.cs",
+              "RelativeDocumentMoniker": "Cliente\\Form5.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form5.cs",
+              "RelativeToolTip": "Cliente\\Form5.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAIwBMAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T20:09:26.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "Cliente\\Form1.Designer.cs",
@@ -55,20 +185,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form1.cs",
-              "RelativeDocumentMoniker": "Cliente\\Form1.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form1.cs",
-              "RelativeToolTip": "Cliente\\Form1.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAowEcAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T20:10:00.54Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form1.cs",
               "RelativeDocumentMoniker": "Cliente\\Form1.cs",
@@ -80,19 +197,44 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GUIActualizar.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs",
-              "RelativeDocumentMoniker": "Cliente\\GUIActualizar.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Cliente\\GUIActualizar.cs [Dise\u00F1o]",
+              "DocumentIndex": 6,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form1.cs",
+              "RelativeDocumentMoniker": "Cliente\\Form1.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form1.cs",
+              "RelativeToolTip": "Cliente\\Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T20:09:46.63Z",
+              "WhenOpened": "2025-04-03T20:10:00.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Form4.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form4.cs",
+              "RelativeDocumentMoniker": "Cliente\\Form4.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form4.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Cliente\\Form4.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T20:43:48.582Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
+              "Title": "Form5.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form5.cs",
+              "RelativeDocumentMoniker": "Cliente\\Form5.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form5.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Cliente\\Form5.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-03T20:09:26.734Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Residencial.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Residencial.cs",
               "RelativeDocumentMoniker": "Cliente\\Residencial.cs",
@@ -101,30 +243,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-03T20:09:26.387Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Form5.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form5.cs",
-              "RelativeDocumentMoniker": "Cliente\\Form5.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form5.cs",
-              "RelativeToolTip": "Cliente\\Form5.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAmwCUAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T20:09:26.472Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Form5.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\Form5.cs",
-              "RelativeDocumentMoniker": "Cliente\\Form5.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form5.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form5.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
-              "WhenOpened": "2025-04-03T20:09:26.734Z"
             }
           ]
         }

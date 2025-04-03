@@ -47,6 +47,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -217,11 +218,21 @@
             this.label10.Text = "Escribir \"AC\" O \"INAC\"";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(438, 153);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(69, 16);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "Rango:1-6";
+            // 
             // Crear
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 388);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtFecha);
             this.Controls.Add(this.label9);
@@ -270,5 +281,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
     }
 }

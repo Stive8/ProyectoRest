@@ -17,6 +17,7 @@ namespace Cliente
         public GUIActualizar()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen; // Centrar ventana en la pantalla
             txtFecha.ReadOnly = true;
         }
 

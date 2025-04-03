@@ -17,6 +17,7 @@ namespace Cliente
         public Listar()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen; // Centrar ventana en la pantalla
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)

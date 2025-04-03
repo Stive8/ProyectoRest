@@ -10,6 +10,7 @@ namespace Cliente
         public Consultar()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen; // Centrar ventana en la pantalla
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)

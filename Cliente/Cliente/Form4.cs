@@ -17,6 +17,7 @@ namespace Cliente
         public Eliminar()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen; // Centrar ventana en la pantalla
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

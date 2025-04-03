@@ -16,6 +16,7 @@ namespace Cliente
         public Crear()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen; // Centrar ventana en la pantalla
             txtFecha.Text = DateTime.Now.ToString("yyyy-MM-ddTHH:mm:ss");
         }
 
