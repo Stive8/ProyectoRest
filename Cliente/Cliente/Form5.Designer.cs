@@ -42,13 +42,14 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(12, 12);
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.Size = new System.Drawing.Size(587, 232);
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(524, 274);
+            this.btnListar.Location = new System.Drawing.Point(503, 265);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(75, 23);
             this.btnListar.TabIndex = 3;
@@ -59,9 +60,9 @@
             // btnActivos
             // 
             this.btnActivos.AutoSize = true;
-            this.btnActivos.Location = new System.Drawing.Point(13, 279);
+            this.btnActivos.Location = new System.Drawing.Point(28, 265);
             this.btnActivos.Name = "btnActivos";
-            this.btnActivos.Size = new System.Drawing.Size(58, 17);
+            this.btnActivos.Size = new System.Drawing.Size(69, 20);
             this.btnActivos.TabIndex = 4;
             this.btnActivos.TabStop = true;
             this.btnActivos.Text = "Activar";
@@ -70,9 +71,9 @@
             // btnInactivos
             // 
             this.btnInactivos.AutoSize = true;
-            this.btnInactivos.Location = new System.Drawing.Point(92, 279);
+            this.btnInactivos.Location = new System.Drawing.Point(122, 265);
             this.btnInactivos.Name = "btnInactivos";
-            this.btnInactivos.Size = new System.Drawing.Size(68, 17);
+            this.btnInactivos.Size = new System.Drawing.Size(81, 20);
             this.btnInactivos.TabIndex = 5;
             this.btnInactivos.TabStop = true;
             this.btnInactivos.Text = "Inactivos";
@@ -81,9 +82,9 @@
             // btnEstratoBajo
             // 
             this.btnEstratoBajo.AutoSize = true;
-            this.btnEstratoBajo.Location = new System.Drawing.Point(185, 279);
+            this.btnEstratoBajo.Location = new System.Drawing.Point(228, 265);
             this.btnEstratoBajo.Name = "btnEstratoBajo";
-            this.btnEstratoBajo.Size = new System.Drawing.Size(85, 17);
+            this.btnEstratoBajo.Size = new System.Drawing.Size(100, 20);
             this.btnEstratoBajo.TabIndex = 6;
             this.btnEstratoBajo.TabStop = true;
             this.btnEstratoBajo.Text = "Estrato 1,2,3";
@@ -92,9 +93,9 @@
             // btnEstrtatoAlto
             // 
             this.btnEstrtatoAlto.AutoSize = true;
-            this.btnEstrtatoAlto.Location = new System.Drawing.Point(288, 279);
+            this.btnEstrtatoAlto.Location = new System.Drawing.Point(353, 265);
             this.btnEstrtatoAlto.Name = "btnEstrtatoAlto";
-            this.btnEstrtatoAlto.Size = new System.Drawing.Size(85, 17);
+            this.btnEstrtatoAlto.Size = new System.Drawing.Size(100, 20);
             this.btnEstrtatoAlto.TabIndex = 7;
             this.btnEstrtatoAlto.TabStop = true;
             this.btnEstrtatoAlto.Text = "Estrato 4,5,6";
@@ -102,7 +103,7 @@
             // 
             // Listar
             // 
-            this.ClientSize = new System.Drawing.Size(611, 335);
+            this.ClientSize = new System.Drawing.Size(611, 300);
             this.Controls.Add(this.btnEstrtatoAlto);
             this.Controls.Add(this.btnEstratoBajo);
             this.Controls.Add(this.btnInactivos);
