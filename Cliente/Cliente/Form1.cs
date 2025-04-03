@@ -58,5 +58,15 @@ namespace Cliente
             // Mostrar el formulario
             form5.Show();
         }
+
+        private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            GUIActualizar gUIActualizar = new GUIActualizar();
+
+            // Mostrar el formulario
+            gUIActualizar.Show();
+
+        }
     }
 }
