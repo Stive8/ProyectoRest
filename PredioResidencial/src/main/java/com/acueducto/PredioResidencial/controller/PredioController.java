@@ -50,11 +50,14 @@ public class PredioController {
     @GetMapping("buscar/{value}")
     public ResponseEntity<HttpStatus> consultarPredio(@PathVariable("value") Integer value) {
         try {
+            System.out.println("Peticion GET");
             return new ResponseEntity(servicio.buscarPredioResidencialPorId(value), HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("Peticion GET");
             return ResponseEntity.badRequest().build(); // Devuelve un 400 con cuerpo vacío
         }
+
     }
 
     @DeleteMapping("eliminar/{value}")

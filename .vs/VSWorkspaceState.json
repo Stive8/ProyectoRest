@@ -3,9 +3,8 @@
     "",
     "\\Cliente",
     "\\Cliente\\Cliente",
-    "\\Cliente\\Cliente\\models",
-    "\\Cliente\\Cliente\\obj\\Release"
+    "\\Cliente\\Cliente\\models"
   ],
-  "SelectedNode": "\\Cliente\\Cliente\\Form2.cs",
+  "SelectedNode": "\\Cliente\\Cliente\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -27,5 +27,16 @@ namespace Cliente
             form2.Show();
 
         }
+
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+
+            // Crear una instancia del formulario Form2
+            Consultar form3 = new Consultar();
+
+            // Mostrar el formulario
+            form3.Show();
+
+        }
     }
 }
