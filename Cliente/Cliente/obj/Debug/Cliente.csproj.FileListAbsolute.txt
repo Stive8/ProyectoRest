@@ -71,3 +71,5 @@ C:\Users\Usuario\Documents\GitHub\ProyectoRest\Cliente\Cliente\bin\Debug\System.
 C:\Users\Usuario\Documents\GitHub\ProyectoRest\Cliente\Cliente\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Usuario\Documents\GitHub\ProyectoRest\Cliente\Cliente\bin\Debug\System.ValueTuple.xml
 C:\Users\Usuario\Documents\GitHub\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.csproj.Up2Date
+C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.Listar.resources
+C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.GUIActualizar.resources
