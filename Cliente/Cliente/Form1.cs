@@ -17,6 +17,15 @@ namespace Cliente
             InitializeComponent();
         }
 
-       
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+
+            // Crear una instancia del formulario Form2
+            Form2 form2 = new Form2();
+
+            // Mostrar el formulario
+            form2.Show();
+
+        }
     }
 }
