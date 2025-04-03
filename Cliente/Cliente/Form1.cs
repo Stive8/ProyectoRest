@@ -38,5 +38,16 @@ namespace Cliente
             form3.Show();
 
         }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+
+            // Crear una instancia del formulario Form2
+            Eliminar form4 = new Eliminar();
+
+            // Mostrar el formulario
+            form4.Show();
+
+        }
     }
 }

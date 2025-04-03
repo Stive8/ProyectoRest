@@ -64,15 +64,11 @@ public class PredioController {
     public ResponseEntity<Residencial> eliminarPredio(@PathVariable("value") Integer value) {
 
         try {
-
             servicio.eliminarPredioResidencial(value);
-            return new ResponseEntity<>(HttpStatus.OK);
-
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT); // 204 No Content
         } catch (Exception e) {
-
             e.printStackTrace();
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR); // 500 Internal Server Error
         }
 
     }
