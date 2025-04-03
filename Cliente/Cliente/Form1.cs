@@ -62,11 +62,13 @@ namespace Cliente
         private void actualizarToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-            GUIActualizar gUIActualizar = new GUIActualizar();
+            GUIActualizar guiActualizar = new GUIActualizar();
 
             // Mostrar el formulario
-            gUIActualizar.Show();
+            guiActualizar.Show();
 
         }
+
+      
     }
 }
