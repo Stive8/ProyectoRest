@@ -121,47 +121,4 @@ public class PredioController {
         return "Service status Ok!";
     }
 
-    /*
-    @GetMapping(value = "/")
-    public Integer getValue() {
-        return value;
-    }
-    */
-
-//    @GetMapping(value = "/test")
-//    public ResponseEntity<Employee> getValue() {
-//        //Employee emp = new Employee(123, "Pedro");
-//        if (emp != null) {
-//            return ResponseEntity.ok(emp);
-//        }
-//        System.out.println("ME TOCARON");
-//        return ResponseEntity.notFound().build();
-//    }
-//
-//
-//    @PostMapping(value = "/{value}")
-//    public void setValue(@PathVariable("value") Integer value) {
-//        System.out.println("Value = " + value);
-//        this.value = value;
-//    }
-
-    /*
-    @PostMapping(value = "/set")
-    public void setValue2(@RequestParam("value") Optional<Integer> value) {
-        if (value.isPresent()) {
-            System.out.println("Value = " + value);
-            this.value = value.get();
-        } else {
-            System.out.println("NO ESTA!");
-        }
-    }
-     */
-
-//    @PostMapping(value = "/set")
-//    public Employee setValue2(@RequestBody Employee emp) {
-//
-//        this.emp = emp;
-//
-//        return emp;
-//    }
 }
