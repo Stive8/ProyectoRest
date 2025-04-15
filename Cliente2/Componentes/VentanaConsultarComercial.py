@@ -28,7 +28,7 @@ class VentanaConsultarComercial(tk.Toplevel):
 
         # Crear etiquetas y cajas de texto
         for idx, field in enumerate(self.fields.keys()):
-            tk.Label(self, text=field, anchor="e", width=15).grid(row=idx + 1, column=0, sticky="w", padx=10, pady=2)
+            tk.Label(self, text=field, anchor="", width=15).grid(row=idx + 1, column=0, sticky="w", padx=10, pady=2)
             entry = tk.Entry(self, width=30)
             entry.grid(row=idx + 1, column=1, padx=10, pady=2)
             self.fields[field] = entry
