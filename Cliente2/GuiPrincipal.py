@@ -4,24 +4,44 @@ from tkinter import messagebox
 class GuiPrincipal:
     def __init__(self, root):
         self.root = root
-        self.root.title("Mi Proyecto GUI")
-        self.root.geometry("400x300")
+        self.root.title("Sistema Comercial")
+        self.root.geometry("600x400")
 
-        # Ejemplo: etiqueta
-        self.label = tk.Label(root, text="¡Hola, Mundo!", font=("Arial", 14))
-        self.label.pack(pady=10)
+        self.crear_menu()
 
-        # Ejemplo: entrada de texto
-        self.entry = tk.Entry(root)
-        self.entry.pack(pady=5)
+    def crear_menu(self):
+        menu_bar = tk.Menu(self.root)
 
-        # Ejemplo: botón
-        self.boton = tk.Button(root, text="Saludar", command=self.saludar)
-        self.boton.pack(pady=10)
+        # Menú: Predio Comercial
+        predio_menu = tk.Menu(menu_bar, tearoff=0)
+        predio_menu.add_command(label="Crear", command=lambda: self.mostrar_accion("Crear Predio"))
+        predio_menu.add_command(label="Eliminar", command=lambda: self.mostrar_accion("Eliminar Predio"))
+        predio_menu.add_command(label="Consultar", command=lambda: self.mostrar_accion("Consultar Predio"))
+        predio_menu.add_command(label="Listar", command=lambda: self.mostrar_accion("Listar Predios"))
+        predio_menu.add_command(label="Actualizar", command=lambda: self.mostrar_accion("Actualizar Predio"))
+        menu_bar.add_cascade(label="Predio Comercial", menu=predio_menu)
 
-    def saludar(self):
-        nombre = self.entry.get()
-        messagebox.showinfo("Saludo", f"Hola, {nombre}!")
+        # Menú: Licencia Comercial
+        licencia_menu = tk.Menu(menu_bar, tearoff=0)
+        licencia_menu.add_command(label="Crear", command=lambda: self.mostrar_accion("Crear Licencia"))
+        licencia_menu.add_command(label="Eliminar", command=lambda: self.mostrar_accion("Eliminar Licencia"))
+        licencia_menu.add_command(label="Consultar", command=lambda: self.mostrar_accion("Consultar Licencia"))
+        licencia_menu.add_command(label="Listar", command=lambda: self.mostrar_accion("Listar Licencias"))
+        licencia_menu.add_command(label="Actualizar", command=lambda: self.mostrar_accion("Actualizar Licencia"))
+        menu_bar.add_cascade(label="Licencia Comercial", menu=licencia_menu)
+
+        # Menú: Ayuda
+        ayuda_menu = tk.Menu(menu_bar, tearoff=0)
+        ayuda_menu.add_command(label="Acerca de...", command=self.mostrar_acerca_de)
+        menu_bar.add_cascade(label="Ayuda", menu=ayuda_menu)
+
+        self.root.config(menu=menu_bar)
+
+    def mostrar_accion(self, texto):
+        messagebox.showinfo("Acción seleccionada", f"Has seleccionado: {texto}")
+
+    def mostrar_acerca_de(self):
+        messagebox.showinfo("Acerca de", "Hecho por:\nJuanita Rodriguez\nStiven Alvarez \nBrayhan Ortegon ")
 
 if __name__ == "__main__":
     root = tk.Tk()
