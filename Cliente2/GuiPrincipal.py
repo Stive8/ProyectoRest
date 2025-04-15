@@ -1,6 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox
 
+from Componentes.VentanaCrearComercial import VentanaCrearComercial
+from Componentes.VentanaEliminarComercial import VentanaEliminarComercial
 from Componentes.VentanaCrearLicencia import VentanaCrearLicencia
 from Componentes.VentanaConsultarLicencia import VentanaConsultarLicencia
 
@@ -19,7 +21,7 @@ class GuiPrincipal:
 
         # Menú: Predio Comercial
         predio_menu = tk.Menu(menu_bar, tearoff=0)
-        predio_menu.add_command(label="Crear", command=lambda: self.mostrar_accion("Crear Predio"))
+        predio_menu.add_command(label="Crear", command=self.abrir_crear_comercial)
         predio_menu.add_command(label="Eliminar", command=lambda: self.mostrar_accion("Eliminar Predio"))
         predio_menu.add_command(label="Consultar", command=lambda: self.mostrar_accion("Consultar Predio"))
         predio_menu.add_command(label="Listar", command=lambda: self.mostrar_accion("Listar Predios"))
@@ -44,6 +46,12 @@ class GuiPrincipal:
 
     def mostrar_accion(self, texto):
         messagebox.showinfo("Acción seleccionada", f"Has seleccionado: {texto}")
+
+    def abrir_crear_comercial(self):
+        VentanaCrearComercial(self.root)
+
+    def abrir_crear_comercial(self):
+        VentanaEliminarComercial(self.root)
 
     def abrir_crear_licencia(self):
         VentanaCrearLicencia(self.root)

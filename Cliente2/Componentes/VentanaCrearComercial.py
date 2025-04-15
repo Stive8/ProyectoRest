@@ -1,82 +1,82 @@
 import tkinter as tk
 from tkinter import messagebox
+from tkinter import ttk
 from datetime import datetime
 import requests
 import json
 
-# Función que se llama al hacer clic en "Crear"
-def crear_comercial():
-    try:
-        data = {
-            "propietario": entry_propietario.get().strip(),
-            "direccion": entry_direccion.get().strip(),
-            "fechaRegistro": entry_fecha.get().strip(),
-            "estadoCuenta": entry_estado.get().strip(),
-            "estrato": int(entry_estrato.get().strip()),
-            "consumo": float(entry_consumo.get().strip()),
-            "subsidio": int(entry_subsidio.get().strip()),
-            "tipoVivienda": entry_vivienda.get().strip()
-        }
+class VentanaCrearComercial(tk.Toplevel):
+    def __init__(self, master=None):
+        super().__init__(master)
+        self.title("Crear Predio Comercial")
+        self.geometry("450x400")
+        self.resizable(False, False)
 
-        response = requests.post(
-            url="http://localhost:8081/predio/crear",
-            headers={"Content-Type": "application/json"},
-            data=json.dumps(data)
-        )
+        self.crear_componentes()
+        self.centrar_ventana()
 
-        messagebox.showinfo("Resultado", f"Código de respuesta: {response.status_code}")
-    except Exception as e:
-        messagebox.showerror("Error", str(e))
+    def crear_componentes(self):
+        # Título
+        titulo = tk.Label(self, text="Crear Predio Comercial", font=("Arial", 16, "bold"))
+        titulo.pack(pady=15)
 
-# Crear ventana
-ventana = tk.Tk()
-ventana.title("Crear")
-ventana.geometry("500x340")
-ventana.resizable(False, False)
+        # Contenedor para el formulario
+        form_frame = tk.Frame(self)
+        form_frame.pack(pady=10)
 
-# Centrar ventana en la pantalla
-ventana.eval('tk::PlaceWindow . center')
+        # Campos
+        labels = [
+            "Propietario:", "Dirección:", "Estado de Cuenta (AC/INAC):", 
+            "Estrato (1-6):", "Consumo m3:", "Subsidio:", 
+            "Tipo de Vivienda:", "Fecha de Registro:"
+        ]
 
-# Etiquetas y campos de texto
-tk.Label(ventana, text="Modulo para Crear", font=('Arial', 10, 'bold')).grid(row=0, column=1, pady=10)
+        self.entries = []
 
-tk.Label(ventana, text="Propietario").grid(row=1, column=0, padx=30, sticky="e")
-entry_propietario = tk.Entry(ventana, width=30)
-entry_propietario.grid(row=1, column=1, pady=5)
+        for i, label_text in enumerate(labels):
+            tk.Label(form_frame, text=label_text).grid(row=i, column=0, sticky="w", padx=5, pady=5)
+            entry = tk.Entry(form_frame, width=30)
+            entry.grid(row=i, column=1, padx=1, pady=5)
+            self.entries.append(entry)
 
-tk.Label(ventana, text="Direccion").grid(row=2, column=0, padx=30, sticky="e")
-entry_direccion = tk.Entry(ventana, width=30)
-entry_direccion.grid(row=2, column=1, pady=5)
+        # Valor por defecto para fecha
+        self.entries[-1].insert(0, datetime.now().strftime("%Y-%m-%dT%H:%M:%S"))
 
-tk.Label(ventana, text="Estado de Cuenta").grid(row=3, column=0, padx=30, sticky="e")
-entry_estado = tk.Entry(ventana, width=30)
-entry_estado.grid(row=3, column=1, padx=5)
-tk.Label(ventana, text='Escribir "AC" o "INAC"').grid(row=3, column=2)
+        # Botón de creación
+        btn_crear = tk.Button(self, text="Crear Predio Comercial", command=self.crear_comercial)
+        btn_crear.pack(pady=20)
 
-tk.Label(ventana, text="Estrato").grid(row=4, column=0, padx=30, sticky="e")
-entry_estrato = tk.Entry(ventana, width=30)
-entry_estrato.grid(row=4, column=1, pady=5)
-tk.Label(ventana, text="Rango: 1-6").grid(row=4, column=2)
+    def crear_comercial(self):
+        try:
+            data = {
+                "propietario": self.entries[0].get().strip(),
+                "direccion": self.entries[1].get().strip(),
+                "estadoCuenta": self.entries[2].get().strip(),
+                "estrato": int(self.entries[3].get().strip()),
+                "consumo": float(self.entries[4].get().strip()),
+                "subsidio": int(self.entries[5].get().strip()),
+                "tipoVivienda": self.entries[6].get().strip(),
+                "fechaRegistro": self.entries[7].get().strip(),
+            }
 
-tk.Label(ventana, text="Consumo m3").grid(row=5, column=0, padx=30, sticky="e")
-entry_consumo = tk.Entry(ventana, width=30)
-entry_consumo.grid(row=5, column=1, pady=5)
+            response = requests.post(
+                url="http://localhost:8081/predio/crear",
+                headers={"Content-Type": "application/json"},
+                data=json.dumps(data)
+            )
 
-tk.Label(ventana, text="Subsidio").grid(row=6, column=0, padx=30, sticky="e")
-entry_subsidio = tk.Entry(ventana, width=30)
-entry_subsidio.grid(row=6, column=1, pady=5)
+            messagebox.showinfo("Resultado", f"Código de respuesta: {response.status_code}")
+        except Exception as e:
+            messagebox.showerror("Error", str(e))
 
-tk.Label(ventana, text="Tipo Vivienda").grid(row=7, column=0, padx=30, sticky="e")
-entry_vivienda = tk.Entry(ventana, width=30)
-entry_vivienda.grid(row=7, column=1, pady=5)
+    def centrar_ventana(self):
+        self.update_idletasks()
+        ancho = self.winfo_width()
+        alto = self.winfo_height()
+        ancho_pantalla = self.winfo_screenwidth()
+        alto_pantalla = self.winfo_screenheight()
 
-tk.Label(ventana, text="Fecha Registro").grid(row=8, column=0, padx=30, sticky="e")
-entry_fecha = tk.Entry(ventana, width=30)
-entry_fecha.insert(0, datetime.now().strftime("%Y-%m-%dT%H:%M:%S"))
-entry_fecha.grid(row=8, column=1, pady=5)
+        x = (ancho_pantalla // 2) - (ancho // 2)
+        y = (alto_pantalla // 2) - (alto // 2)
 
-# Botón para crear
-btn_crear = tk.Button(ventana, text="Crear", command=crear_comercial)
-btn_crear.grid(row=9, column=1, pady=20)
-
-ventana.mainloop()
+        self.geometry(f"{ancho}x{alto}+{x}+{y}")

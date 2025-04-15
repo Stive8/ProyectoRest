@@ -8,6 +8,7 @@ class EliminarApp:
         self.root.title("Eliminar")
         self.root.geometry("400x400")
         self.root.eval('tk::PlaceWindow . center')
+        self.centrar_ventana
 
         # Título
         tk.Label(root, text="Modulo para Eliminar", font=("Arial", 10, "bold")).grid(row=0, column=1, columnspan=2, pady=10)
@@ -27,7 +28,7 @@ class EliminarApp:
 
         # Crear etiquetas y cajas de texto
         for idx, field in enumerate(self.fields.keys()):
-            tk.Label(root, text=field).grid(row=idx + 1, column=0, sticky="e", padx=20, pady=2)
+            tk.Label(root, text=field).grid(row=idx + 1, column=0, sticky="w", padx=20, pady=2)
             entry = tk.Entry(root, width=30)
             entry.grid(row=idx + 1, column=1, padx=10, pady=2)
             self.fields[field] = entry
@@ -106,8 +107,16 @@ class EliminarApp:
         for entry in self.fields.values():
             entry.delete(0, tk.END)
 
+    def centrar_ventana(self):
+        self.update_idletasks()  # Asegura que la ventana se haya creado completamente
 
-if __name__ == "__main__":
-    root = tk.Tk()
-    app = EliminarApp(root)
-    root.mainloop()
+        ancho = self.winfo_width()
+        alto = self.winfo_height()
+        ancho_pantalla = self.winfo_screenwidth()
+        alto_pantalla = self.winfo_screenheight()
+
+        x = (ancho_pantalla // 2) - (ancho // 2)
+        y = (alto_pantalla // 2) - (alto // 2)
+
+        self.geometry(f"{ancho}x{alto}+{x}+{y}")
+
