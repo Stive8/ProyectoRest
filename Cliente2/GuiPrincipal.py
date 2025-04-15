@@ -1,5 +1,7 @@
 import tkinter as tk
 from tkinter import messagebox
+from Componentes.VentanaCrearLicencia import VentanaCrearLicencia
+
 
 class GuiPrincipal:
     def __init__(self, root):
@@ -23,7 +25,7 @@ class GuiPrincipal:
 
         # Menú: Licencia Comercial
         licencia_menu = tk.Menu(menu_bar, tearoff=0)
-        licencia_menu.add_command(label="Crear", command=lambda: self.mostrar_accion("Crear Licencia"))
+        licencia_menu.add_command(label="Crear", command=self.abrir_crear_licencia)
         licencia_menu.add_command(label="Eliminar", command=lambda: self.mostrar_accion("Eliminar Licencia"))
         licencia_menu.add_command(label="Consultar", command=lambda: self.mostrar_accion("Consultar Licencia"))
         licencia_menu.add_command(label="Listar", command=lambda: self.mostrar_accion("Listar Licencias"))
@@ -42,6 +44,10 @@ class GuiPrincipal:
 
     def mostrar_acerca_de(self):
         messagebox.showinfo("Acerca de", "Hecho por:\nJuanita Rodriguez\nStiven Alvarez \nBrayhan Ortegon ")
+
+    
+    def abrir_crear_licencia(self):
+        VentanaCrearLicencia(self.root)
 
 if __name__ == "__main__":
     root = tk.Tk()
