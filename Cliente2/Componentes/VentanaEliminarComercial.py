@@ -1,8 +1,9 @@
 import tkinter as tk
 from tkinter import messagebox
+from tkinter import ttk
 import requests
 
-class EliminarApp:
+class VentanaEliminarComercial(tk.Toplevel):
     def __init__(self, root):
         self.root = root
         self.root.title("Eliminar")

@@ -22,7 +22,7 @@ class GuiPrincipal:
         # Menú: Predio Comercial
         predio_menu = tk.Menu(menu_bar, tearoff=0)
         predio_menu.add_command(label="Crear", command=self.abrir_crear_comercial)
-        predio_menu.add_command(label="Eliminar", command=lambda: self.mostrar_accion("Eliminar Predio"))
+        predio_menu.add_command(label="Eliminar", command=self.abrir_eliminar_comercial)
         predio_menu.add_command(label="Consultar", command=lambda: self.mostrar_accion("Consultar Predio"))
         predio_menu.add_command(label="Listar", command=lambda: self.mostrar_accion("Listar Predios"))
         predio_menu.add_command(label="Actualizar", command=lambda: self.mostrar_accion("Actualizar Predio"))
@@ -50,7 +50,7 @@ class GuiPrincipal:
     def abrir_crear_comercial(self):
         VentanaCrearComercial(self.root)
 
-    def abrir_crear_comercial(self):
+    def abrir_eliminar_comercial(self):
         VentanaEliminarComercial(self.root)
 
     def abrir_crear_licencia(self):
