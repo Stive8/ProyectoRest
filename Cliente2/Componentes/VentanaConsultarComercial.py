@@ -5,37 +5,41 @@ import requests
 class VentanaConsultarComercial(tk.Toplevel):
     def __init__(self, master=None):
         super().__init__(master)
-        self.title("Consultar")
-        self.geometry("400x400")
+        self.title("Consultar Predio")
+        self.geometry("500x400")
         self.resizable(False, False)
-        self.center_window()
+
+        self.crear_componentes()
+        self.centrar_ventana()
+
+    def crear_componentes(self):
+        # Título
+        titulo = tk.Label(self, text="Módulo para Consultar", font=("Arial", 14, "bold"))
+        titulo.pack(pady=10)
+
+        # Frame para el formulario
+        form_frame = tk.Frame(self)
+        form_frame.pack(pady=10)
 
         # Diccionario de campos
-        self.fields = {
-            "ID": None,
-            "Propietario": None,
-            "Direccion": None,
-            "Estado de Cuenta": None,
-            "Estrato": None,
-            "Consumo m3": None,
-            "Subsidio": None,
-            "Tipo Vivienda": None,
-            "Fecha Registro": None
-        }
+        self.fields = {}
+        labels = [
+            "ID", "Propietario", "Direccion", "Estado de Cuenta",
+            "Estrato", "Consumo m3", "Subsidio", "Tipo Vivienda", "Fecha Registro"
+        ]
 
-        # Título
-        tk.Label(self, text="Modulo para Crear", font=("Arial", 10, "bold")).grid(row=0, column=1, columnspan=2, pady=10)
+        for idx, label in enumerate(labels):
+            tk.Label(form_frame, text=label + ":", width=18, anchor="w").grid(row=idx, column=0, padx=10, pady=3, sticky="e")
+            entry = tk.Entry(form_frame, width=30)
+            entry.grid(row=idx, column=1, padx=10, pady=3)
+            self.fields[label] = entry
 
-        # Crear etiquetas y cajas de texto
-        for idx, field in enumerate(self.fields.keys()):
-            tk.Label(self, text=field, anchor="", width=15).grid(row=idx + 1, column=0, sticky="w", padx=10, pady=2)
-            entry = tk.Entry(self, width=30)
-            entry.grid(row=idx + 1, column=1, padx=10, pady=2)
-            self.fields[field] = entry
+        # Botón para consultar
+        btn_frame = tk.Frame(self)
+        btn_frame.pack(pady=15)
 
-        # Botón Consultar
-        btn_consultar = tk.Button(self, text="Consulta", command=self.consultar)
-        btn_consultar.grid(row=len(self.fields) + 1, column=1, pady=15)
+        btn_consultar = tk.Button(btn_frame, text="Consultar", command=self.consultar)
+        btn_consultar.grid(row=0, column=0, padx=10)
 
     def consultar(self):
         try:
@@ -49,7 +53,6 @@ class VentanaConsultarComercial(tk.Toplevel):
 
             if response.status_code == 200:
                 data = response.json()
-
                 self.fields["Propietario"].delete(0, tk.END)
                 self.fields["Propietario"].insert(0, data["propietario"])
 
@@ -78,12 +81,11 @@ class VentanaConsultarComercial(tk.Toplevel):
         except Exception as e:
             messagebox.showerror("Error", f"Ocurrió un error al consultar: {str(e)}")
 
-    def center_window(self):
+    def centrar_ventana(self):
         self.update_idletasks()
         ancho = self.winfo_width()
         alto = self.winfo_height()
-        ancho_pantalla = self.winfo_screenwidth()
-        alto_pantalla = self.winfo_screenheight()
-        x = (ancho_pantalla // 2) - (ancho // 2)
-        y = (alto_pantalla // 2) - (alto // 2)
-        self.geometry(f"+{x}+{y}")
+        x = (self.winfo_screenwidth() // 2) - (ancho // 2)
+        y = (self.winfo_screenheight() // 2) - (alto // 2)
+        self.geometry(f"{ancho}x{alto}+{x}+{y}")
+
