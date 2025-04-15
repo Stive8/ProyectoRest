@@ -9,6 +9,8 @@ from Componentes.VentanaCrearLicencia import VentanaCrearLicencia
 from Componentes.VentanaConsultarLicencia import VentanaConsultarLicencia
 from Componentes.VentanaEliminarLicencia import VentanaEliminarLicencia
 from Componentes.VentanaActualizarLicencia import VentanaActualizarLicencia
+from Componentes.VentanaListarLicencia import VentanaListarLicencia
+
 
 
 
@@ -38,7 +40,7 @@ class GuiPrincipal:
         licencia_menu.add_command(label="Crear", command=self.abrir_crear_licencia)
         licencia_menu.add_command(label="Eliminar", command=self.abrir_eliminar_licencia)
         licencia_menu.add_command(label="Consultar", command=self.abrir_consultar_licencia)
-        licencia_menu.add_command(label="Listar", command=lambda: self.mostrar_accion("Listar Licencias"))
+        licencia_menu.add_command(label="Listar", command=self.abrir_listar_licencia)
         licencia_menu.add_command(label="Actualizar", command=self.abrir_actualizar_licencia)
         menu_bar.add_cascade(label="Licencia Comercial", menu=licencia_menu)
 
@@ -76,6 +78,10 @@ class GuiPrincipal:
 
     def abrir_listar_comercial(self):
         VentanaListarComercial(self.root)
+
+    def abrir_listar_licencia(self):
+        VentanaListarLicencia(self.root)
+
 
     def mostrar_acerca_de(self):
         messagebox.showinfo("Acerca de", "Sistema Comercial v1.0\nDesarrollado en Python con Tkinter")
