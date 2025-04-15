@@ -55,6 +55,10 @@ class GuiPrincipal:
     def abrir_crear_comercial(self):
         VentanaCrearComercial(self.root)
 
+    def abrir_consultar_comercial(self):
+        VentanaConsultarComercial(self.root)
+
+
     def abrir_eliminar_comercial(self):
         VentanaEliminarComercial(self.root)
 
@@ -69,6 +73,9 @@ class GuiPrincipal:
 
     def abrir_actualizar_licencia(self):
         VentanaActualizarLicencia(self.root)
+
+    def abrir_listar_comercial(self):
+        VentanaListarComercial(self.root)
 
     def mostrar_acerca_de(self):
         messagebox.showinfo("Acerca de", "Sistema Comercial v1.0\nDesarrollado en Python con Tkinter")

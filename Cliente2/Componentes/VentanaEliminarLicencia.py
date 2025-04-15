@@ -94,7 +94,3 @@ class VentanaEliminarLicencia(tk.Toplevel):
         x = (self.winfo_screenwidth() // 2) - (ancho // 2)
         y = (self.winfo_screenheight() // 2) - (alto // 2)
         self.geometry(f"{ancho}x{alto}+{x}+{y}")
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
