@@ -1,52 +1,77 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import messagebox
 
-class VentanaCrearLicencia(tk.Toplevel):
-    def __init__(self, master=None):
-        super().__init__(master)
-        self.title("Crear Licencia Comercial")
-        self.geometry("400x400")
-        self.resizable(False, False)
+from Componentes.VentanaCrearLicencia import VentanaCrearLicencia
+from Componentes.VentanaConsultarLicencia import VentanaConsultarLicencia
 
-        self.crear_componentes()
 
-    def crear_componentes(self):
-        # Título centrado
-        titulo = tk.Label(self, text="Crear Licencia Comercial", font=("Arial", 16))
-        titulo.pack(pady=20)
+class GuiPrincipal:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Sistema Comercial")
+        self.root.geometry("600x400")
 
-        # Contenedor para los campos
-        form_frame = tk.Frame(self)
-        form_frame.pack(pady=10)
+        self.crear_menu()
+        self.centrar_ventana()
 
-        # Campo 1
-        tk.Label(form_frame, text="Número de Licencia:").grid(row=0, column=0, sticky="e", padx=5, pady=5)
-        self.entry1 = tk.Entry(form_frame)
-        self.entry1.grid(row=0, column=1, padx=5, pady=5)
+    def crear_menu(self):
+        menu_bar = tk.Menu(self.root)
 
-        # Campo 2
-        tk.Label(form_frame, text="Fecha de Expedición:").grid(row=1, column=0, sticky="e", padx=5, pady=5)
-        self.entry2 = tk.Entry(form_frame)
-        self.entry2.grid(row=1, column=1, padx=5, pady=5)
+        # Menú: Predio Comercial
+        predio_menu = tk.Menu(menu_bar, tearoff=0)
+        predio_menu.add_command(label="Crear", command=lambda: self.mostrar_accion("Crear Predio"))
+        predio_menu.add_command(label="Eliminar", command=lambda: self.mostrar_accion("Eliminar Predio"))
+        predio_menu.add_command(label="Consultar", command=lambda: self.mostrar_accion("Consultar Predio"))
+        predio_menu.add_command(label="Listar", command=lambda: self.mostrar_accion("Listar Predios"))
+        predio_menu.add_command(label="Actualizar", command=lambda: self.mostrar_accion("Actualizar Predio"))
+        menu_bar.add_cascade(label="Predio Comercial", menu=predio_menu)
 
-        # Campo 3
-        tk.Label(form_frame, text="Fecha de Vencimiento:").grid(row=2, column=0, sticky="e", padx=5, pady=5)
-        self.entry3 = tk.Entry(form_frame)
-        self.entry3.grid(row=2, column=1, padx=5, pady=5)
+        # Menú: Licencia Comercial
+        licencia_menu = tk.Menu(menu_bar, tearoff=0)
+        licencia_menu.add_command(label="Crear", command=self.abrir_crear_licencia)
+        licencia_menu.add_command(label="Eliminar", command=lambda: self.mostrar_accion("Eliminar Licencia"))
+        licencia_menu.add_command(label="Consultar", command=self.abrir_consultar_licencia)
+        licencia_menu.add_command(label="Listar", command=lambda: self.mostrar_accion("Listar Licencias"))
+        licencia_menu.add_command(label="Actualizar", command=lambda: self.mostrar_accion("Actualizar Licencia"))
+        menu_bar.add_cascade(label="Licencia Comercial", menu=licencia_menu)
 
-        # Campo 4
-        tk.Label(form_frame, text="Estado:").grid(row=3, column=0, sticky="e", padx=5, pady=5)
-        self.entry4 = tk.Entry(form_frame)
-        self.entry4.grid(row=3, column=1, padx=5, pady=5)
+        # Menú: Ayuda
+        ayuda_menu = tk.Menu(menu_bar, tearoff=0)
+        ayuda_menu.add_command(label="Acerca de...", command=self.mostrar_acerca_de)
+        menu_bar.add_cascade(label="Ayuda", menu=ayuda_menu)
 
-        # Botón centrado
-        crear_btn = tk.Button(self, text="Crear Licencia Comercial", command=self.crear_licencia)
-        crear_btn.pack(pady=20)
+        self.root.config(menu=menu_bar)
 
-    def crear_licencia(self):
-        # Aquí puedes manejar la lógica de creación
-        print("Licencia creada con los siguientes datos:")
-        print("Campo 1:", self.entry1.get())
-        print("Campo 2:", self.entry2.get())
-        print("Campo 3:", self.entry3.get())
-        print("Campo 4:", self.entry4.get())
+    def mostrar_accion(self, texto):
+        messagebox.showinfo("Acción seleccionada", f"Has seleccionado: {texto}")
+
+    def abrir_crear_licencia(self):
+        VentanaCrearLicencia(self.root)
+
+    def abrir_consultar_licencia(self):
+        VentanaConsultarLicencia(self.root)
+
+    def mostrar_acerca_de(self):
+        messagebox.showinfo("Acerca de", "Sistema Comercial v1.0\nDesarrollado en Python con Tkinter")
+
+    def centrar_ventana(self):
+        self.root.update_idletasks()
+
+        ancho = self.root.winfo_width()
+        alto = self.root.winfo_height()
+        ancho_pantalla = self.root.winfo_screenwidth()
+        alto_pantalla = self.root.winfo_screenheight()
+
+        x = (ancho_pantalla // 2) - (ancho // 2)
+        y = (alto_pantalla // 2) - (alto // 2)
+
+        self.root.geometry(f"{ancho}x{alto}+{x}+{y}")
+
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    app = GuiPrincipal(root)
+    root.mainloop()
+
+def abrir_crear_licencia(self):
+    VentanaCrearLicencia(self.root)
