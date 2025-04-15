@@ -5,6 +5,9 @@ from Componentes.VentanaCrearComercial import VentanaCrearComercial
 from Componentes.VentanaEliminarComercial import VentanaEliminarComercial
 from Componentes.VentanaCrearLicencia import VentanaCrearLicencia
 from Componentes.VentanaConsultarLicencia import VentanaConsultarLicencia
+from Componentes.VentanaEliminarLicencia import VentanaEliminarLicencia
+from Componentes.VentanaActualizarLicencia import VentanaActualizarLicencia
+
 
 
 class GuiPrincipal:
@@ -31,10 +34,10 @@ class GuiPrincipal:
         # Menú: Licencia Comercial
         licencia_menu = tk.Menu(menu_bar, tearoff=0)
         licencia_menu.add_command(label="Crear", command=self.abrir_crear_licencia)
-        licencia_menu.add_command(label="Eliminar", command=lambda: self.mostrar_accion("Eliminar Licencia"))
+        licencia_menu.add_command(label="Eliminar", command=self.abrir_eliminar_licencia)
         licencia_menu.add_command(label="Consultar", command=self.abrir_consultar_licencia)
         licencia_menu.add_command(label="Listar", command=lambda: self.mostrar_accion("Listar Licencias"))
-        licencia_menu.add_command(label="Actualizar", command=lambda: self.mostrar_accion("Actualizar Licencia"))
+        licencia_menu.add_command(label="Actualizar", command=self.abrir_actualizar_licencia)
         menu_bar.add_cascade(label="Licencia Comercial", menu=licencia_menu)
 
         # Menú: Ayuda
@@ -53,11 +56,17 @@ class GuiPrincipal:
     def abrir_eliminar_comercial(self):
         VentanaEliminarComercial(self.root)
 
+    def abrir_eliminar_licencia(self):
+        VentanaEliminarLicencia(self.root)
+
     def abrir_crear_licencia(self):
         VentanaCrearLicencia(self.root)
 
     def abrir_consultar_licencia(self):
         VentanaConsultarLicencia(self.root)
+
+    def abrir_actualizar_licencia(self):
+        VentanaActualizarLicencia(self.root)
 
     def mostrar_acerca_de(self):
         messagebox.showinfo("Acerca de", "Sistema Comercial v1.0\nDesarrollado en Python con Tkinter")
