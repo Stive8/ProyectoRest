@@ -3,6 +3,8 @@ from tkinter import messagebox
 
 from Componentes.VentanaCrearComercial import VentanaCrearComercial
 from Componentes.VentanaEliminarComercial import VentanaEliminarComercial
+from Componentes.VentanaConsultarComercial import VentanaConsultarComercial
+from Componentes.VentanaListarComercial import VentanaListarComercial
 from Componentes.VentanaCrearLicencia import VentanaCrearLicencia
 from Componentes.VentanaConsultarLicencia import VentanaConsultarLicencia
 from Componentes.VentanaEliminarLicencia import VentanaEliminarLicencia
@@ -26,8 +28,8 @@ class GuiPrincipal:
         predio_menu = tk.Menu(menu_bar, tearoff=0)
         predio_menu.add_command(label="Crear", command=self.abrir_crear_comercial)
         predio_menu.add_command(label="Eliminar", command=self.abrir_eliminar_comercial)
-        predio_menu.add_command(label="Consultar", command=lambda: self.mostrar_accion("Consultar Predio"))
-        predio_menu.add_command(label="Listar", command=lambda: self.mostrar_accion("Listar Predios"))
+        predio_menu.add_command(label="Consultar", command=self.abrir_consultar_comercial)
+        predio_menu.add_command(label="Listar", command=self.abrir_listar_comercial)
         predio_menu.add_command(label="Actualizar", command=lambda: self.mostrar_accion("Actualizar Predio"))
         menu_bar.add_cascade(label="Predio Comercial", menu=predio_menu)
 
