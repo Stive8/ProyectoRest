@@ -1,46 +1,48 @@
 import tkinter as tk
 from tkinter import messagebox
-from tkinter import ttk
 import requests
 
 class VentanaEliminarComercial(tk.Toplevel):
-    def __init__(self, root):
-        self.root = root
-        self.root.title("Eliminar")
-        self.root.geometry("400x400")
-        self.root.eval('tk::PlaceWindow . center')
-        self.centrar_ventana
+    def __init__(self, master=None):
+        super().__init__(master)
+        self.title("Eliminar Predio")
+        self.geometry("500x400")
+        self.resizable(False, False)
 
+        self.crear_componentes()
+        self.centrar_ventana()
+
+    def crear_componentes(self):
         # Título
-        tk.Label(root, text="Modulo para Eliminar", font=("Arial", 10, "bold")).grid(row=0, column=1, columnspan=2, pady=10)
+        titulo = tk.Label(self, text="Módulo para Eliminar", font=("Arial", 14, "bold"))
+        titulo.pack(pady=10)
+
+        # Frame para el formulario
+        form_frame = tk.Frame(self)
+        form_frame.pack(pady=10)
 
         # Diccionario de campos
-        self.fields = {
-            "ID": None,
-            "Propietario": None,
-            "Direccion": None,
-            "Estado de Cuenta": None,
-            "Estrato": None,
-            "Consumo m3": None,
-            "Subsidio": None,
-            "Tipo Vivienda": None,
-            "Fecha Registro": None
-        }
+        self.fields = {}
+        labels = [
+            "ID", "Propietario", "Direccion", "Estado de Cuenta",
+            "Estrato", "Consumo m3", "Subsidio", "Tipo Vivienda", "Fecha Registro"
+        ]
 
-        # Crear etiquetas y cajas de texto
-        for idx, field in enumerate(self.fields.keys()):
-            tk.Label(root, text=field).grid(row=idx + 1, column=0, sticky="w", padx=20, pady=2)
-            entry = tk.Entry(root, width=30)
-            entry.grid(row=idx + 1, column=1, padx=10, pady=2)
-            self.fields[field] = entry
+        for idx, label in enumerate(labels):
+            tk.Label(form_frame, text=label + ":", width=18, anchor="w").grid(row=idx, column=0, padx=10, pady=3, sticky="e")
+            entry = tk.Entry(form_frame, width=30)
+            entry.grid(row=idx, column=1, padx=10, pady=3)
+            self.fields[label] = entry
 
-        # Botón Consultar
-        btn_consultar = tk.Button(root, text="Consulta", command=self.consultar)
-        btn_consultar.grid(row=11, column=0, pady=15)
+        # Botones
+        btn_frame = tk.Frame(self)
+        btn_frame.pack(pady=15)
 
-        # Botón Eliminar
-        btn_eliminar = tk.Button(root, text="Eliminar", command=self.eliminar)
-        btn_eliminar.grid(row=11, column=1, pady=15)
+        btn_consultar = tk.Button(btn_frame, text="Consultar", command=self.consultar)
+        btn_consultar.grid(row=0, column=0, padx=10)
+
+        btn_eliminar = tk.Button(btn_frame, text="Eliminar", command=self.eliminar)
+        btn_eliminar.grid(row=0, column=1, padx=10)
 
     def consultar(self):
         try:
@@ -109,15 +111,11 @@ class VentanaEliminarComercial(tk.Toplevel):
             entry.delete(0, tk.END)
 
     def centrar_ventana(self):
-        self.update_idletasks()  # Asegura que la ventana se haya creado completamente
-
+        self.update_idletasks()
         ancho = self.winfo_width()
         alto = self.winfo_height()
-        ancho_pantalla = self.winfo_screenwidth()
-        alto_pantalla = self.winfo_screenheight()
-
-        x = (ancho_pantalla // 2) - (ancho // 2)
-        y = (alto_pantalla // 2) - (alto // 2)
-
+        x = (self.winfo_screenwidth() // 2) - (ancho // 2)
+        y = (self.winfo_screenheight() // 2) - (alto // 2)
         self.geometry(f"{ancho}x{alto}+{x}+{y}")
+
 

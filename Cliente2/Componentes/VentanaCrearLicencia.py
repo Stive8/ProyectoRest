@@ -21,22 +21,22 @@ class VentanaCrearLicencia(tk.Toplevel):
         form_frame.pack(pady=10)
 
         # Campo 1
-        tk.Label(form_frame, text="Número de Licencia:").grid(row=0, column=0, sticky="e", padx=5, pady=5)
+        tk.Label(form_frame, text="Número de Licencia:").grid(row=0, column=0, sticky="w", padx=5, pady=5)
         self.entry1 = tk.Entry(form_frame)
         self.entry1.grid(row=0, column=1, padx=5, pady=5)
 
         # Campo 2
-        tk.Label(form_frame, text="Fecha de Expedición:").grid(row=1, column=0, sticky="e", padx=5, pady=5)
+        tk.Label(form_frame, text="Fecha de Expedición:").grid(row=1, column=0, sticky="w", padx=5, pady=5)
         self.entry2 = tk.Entry(form_frame)
         self.entry2.grid(row=1, column=1, padx=5, pady=5)
 
         # Campo 3
-        tk.Label(form_frame, text="Fecha de Vencimiento:").grid(row=2, column=0, sticky="e", padx=5, pady=5)
+        tk.Label(form_frame, text="Fecha de Vencimiento:").grid(row=2, column=0, sticky="w", padx=5, pady=5)
         self.entry3 = tk.Entry(form_frame)
         self.entry3.grid(row=2, column=1, padx=5, pady=5)
 
         # Campo 4
-        tk.Label(form_frame, text="Estado:").grid(row=3, column=0, sticky="e", padx=5, pady=5)
+        tk.Label(form_frame, text="Estado:").grid(row=3, column=0, sticky="w", padx=5, pady=5)
         self.entry4 = tk.Entry(form_frame)
         self.entry4.grid(row=3, column=1, padx=5, pady=5)
 
