@@ -5,6 +5,7 @@ from Componentes.VentanaCrearComercial import VentanaCrearComercial
 from Componentes.VentanaEliminarComercial import VentanaEliminarComercial
 from Componentes.VentanaConsultarComercial import VentanaConsultarComercial
 from Componentes.VentanaListarComercial import VentanaListarComercial
+from Componentes.VentanaActualizarComercial import VentanaActualizarComercial
 from Componentes.VentanaCrearLicencia import VentanaCrearLicencia
 from Componentes.VentanaConsultarLicencia import VentanaConsultarLicencia
 from Componentes.VentanaEliminarLicencia import VentanaEliminarLicencia
@@ -32,7 +33,7 @@ class GuiPrincipal:
         predio_menu.add_command(label="Eliminar", command=self.abrir_eliminar_comercial)
         predio_menu.add_command(label="Consultar", command=self.abrir_consultar_comercial)
         predio_menu.add_command(label="Listar", command=self.abrir_listar_comercial)
-        predio_menu.add_command(label="Actualizar", command=lambda: self.mostrar_accion("Actualizar Predio"))
+        predio_menu.add_command(label="Actualizar", command=self.abrir_Actualiar_comercial)
         menu_bar.add_cascade(label="Predio Comercial", menu=predio_menu)
 
         # Menú: Licencia Comercial
@@ -60,6 +61,11 @@ class GuiPrincipal:
     def abrir_consultar_comercial(self):
         VentanaConsultarComercial(self.root)
 
+    def abrir_listar_comercial(self):
+        VentanaListarComercial(self.root)
+
+    def abrir_Actualiar_comercial(self):
+        VentanaActualizarComercial(self.root)
 
     def abrir_eliminar_comercial(self):
         VentanaEliminarComercial(self.root)
@@ -75,9 +81,6 @@ class GuiPrincipal:
 
     def abrir_actualizar_licencia(self):
         VentanaActualizarLicencia(self.root)
-
-    def abrir_listar_comercial(self):
-        VentanaListarComercial(self.root)
 
     def abrir_listar_licencia(self):
         VentanaListarLicencia(self.root)
