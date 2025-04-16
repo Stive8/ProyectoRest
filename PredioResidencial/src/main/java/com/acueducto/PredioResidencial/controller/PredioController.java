@@ -20,11 +20,30 @@ public class PredioController {
     private final IServicio servicio;
 
     @PostMapping("crear")
-    public ResponseEntity<HttpStatus> crearPredio(@RequestBody Request request) {
+    public ResponseEntity<String> crearPredio(@RequestBody Request request) {
 
-        System.out.println("Peticion POST");
+        System.out.println("Petición POST recibida");
 
         try {
+            // Validación de campos obligatorios
+            if (request.getPropietario() == null || request.getPropietario().trim().isEmpty() ||
+                    request.getDireccion() == null || request.getDireccion().trim().isEmpty() ||
+                    request.getEstadoCuenta() == null || request.getEstadoCuenta().trim().isEmpty() ||
+                    request.getTipoVivienda() == null || request.getTipoVivienda().trim().isEmpty()) {
+                return new ResponseEntity<>("Datos incompletos en la solicitud", HttpStatus.BAD_REQUEST);
+            }
+
+            // Validación de fecha de registro
+            if (request.getFechaRegistro() == null) {
+                return new ResponseEntity<>("La fecha de registro no puede estar vacía", HttpStatus.BAD_REQUEST);
+            }
+
+            // Validación de números positivos
+            if (request.getEstrato() < 0 || request.getConsumo() < 0 || request.getSubsidio() < 0) {
+                return new ResponseEntity<>("Valores numéricos no pueden ser negativos", HttpStatus.BAD_REQUEST);
+            }
+
+            // Crear el predio residencial
             Residencial residencial = servicio.crearPredioResidencial(
                     request.getPropietario(),
                     request.getDireccion(),
@@ -41,12 +60,16 @@ public class PredioController {
 
             servicio.agregarResidencial(residencial);
 
-            return new ResponseEntity<>(HttpStatus.OK);
+            return new ResponseEntity<>("Predio creado correctamente", HttpStatus.OK);
+
+        } catch (NumberFormatException e) {
+            return new ResponseEntity<>("Error de formato en los valores numéricos: " + e.getMessage(), HttpStatus.BAD_REQUEST);
+        } catch (IllegalArgumentException e) {
+            return new ResponseEntity<>("Error en los datos: " + e.getMessage(), HttpStatus.BAD_REQUEST);
         } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            e.printStackTrace();
+            return new ResponseEntity<>("Error interno en el servidor: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }
-
-
     }
 
     @GetMapping("buscar/{value}")

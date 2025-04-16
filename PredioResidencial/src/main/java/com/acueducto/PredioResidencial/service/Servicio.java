@@ -25,13 +25,43 @@ public class Servicio implements IServicio{
     }
 
     @Override
-    public Residencial crearPredioResidencial(String propietario, String direccion, LocalDateTime fechaRegistro, String estadoCuenta, int estrato, double consumo , int subsidio, String tipoVivienda) {
+    public Residencial crearPredioResidencial(String propietario, String direccion, LocalDateTime fechaRegistro,
+                                              String estadoCuenta, int estrato, double consumo, int subsidio, String tipoVivienda) {
 
-        Residencial residencial = new Residencial(incrementarId(),propietario,direccion,fechaRegistro,estadoCuenta,estrato,consumo,0, subsidio, tipoVivienda);
+        // Validaciones defensivas
+        if (propietario == null || propietario.isEmpty()) {
+            throw new IllegalArgumentException("El nombre del propietario no puede estar vacío.");
+        }
+        if (direccion == null || direccion.isEmpty()) {
+            throw new IllegalArgumentException("La dirección no puede estar vacía.");
+        }
+        if (fechaRegistro == null) {
+            throw new IllegalArgumentException("La fecha de registro no puede ser nula.");
+        }
+        if (estadoCuenta == null || estadoCuenta.isEmpty()) {
+            throw new IllegalArgumentException("El estado de cuenta no puede estar vacío.");
+        }
+        if (estrato < 0) {
+            throw new IllegalArgumentException("El estrato no puede ser negativo.");
+        }
+        if (consumo < 0) {
+            throw new IllegalArgumentException("El consumo no puede ser negativo.");
+        }
+        if (subsidio < 0) {
+            throw new IllegalArgumentException("El subsidio no puede ser negativo.");
+        }
+        if (tipoVivienda == null || tipoVivienda.isEmpty()) {
+            throw new IllegalArgumentException("El tipo de vivienda no puede estar vacío.");
+        }
+
+        // Crear objeto residencial y calcular factura
+        Residencial residencial = new Residencial(incrementarId(), propietario, direccion, fechaRegistro,
+                estadoCuenta, estrato, consumo, 0, subsidio, tipoVivienda);
+
         double valorFactura = residencial.calcularPago();
         residencial.setValorFactura(valorFactura);
-        return residencial;
 
+        return residencial;
     }
 
     @Override
