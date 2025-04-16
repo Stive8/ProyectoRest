@@ -94,24 +94,71 @@ public class PredioController {
 
 
     @DeleteMapping("eliminar/{value}")
-    public ResponseEntity<Residencial> eliminarPredio(@PathVariable("value") Integer value) {
-
+    public ResponseEntity<?> eliminarPredio(@PathVariable("value") Integer value) {
         try {
+            var predio = servicio.buscarPredioResidencialPorId(value);
+
+            if (predio == null) {
+                // Si no existe, se devuelve un 404 Not Found
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El predio con ID " + value + " no existe.");
+            }
+
+            // Si existe, se elimina
             servicio.eliminarPredioResidencial(value);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT); // 204 No Content
+
         } catch (Exception e) {
             e.printStackTrace();
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR); // 500 Internal Server Error
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al eliminar el predio: " + e.getMessage());
         }
-
     }
 
-    @PutMapping("actualizar/{value}")
-    public ResponseEntity<HttpStatus> actualizarPredio( @RequestBody Request request) {
-
+    @PutMapping("actualizar/{id}")
+    public ResponseEntity<?> actualizarPredio(@RequestBody Request request) {
         try {
+            // Validar existencia del predio
+            Residencial existente = servicio.buscarPredioResidencialPorId(request.getId())
+                    .orElseThrow(() -> new RuntimeException("El predio con ID " + request.getId() + " no existe."));
+            if (existente == null) {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                        .body("El predio con ID " + request.getId() + " no existe.");
+            }
 
-            Residencial residencial = servicio.actualizarPredioResidencial(
+            // Validaciones de campos
+            if (request.getPropietario() == null || request.getPropietario().trim().isEmpty()) {
+                return ResponseEntity.badRequest().body("El propietario debe ser un string no vacío.");
+            }
+
+            if (request.getDireccion() == null || request.getDireccion().trim().isEmpty()) {
+                return ResponseEntity.badRequest().body("La dirección debe ser un string no vacío.");
+            }
+
+            String estado = request.getEstadoCuenta();
+            if (estado == null || (!estado.equals("AC") && !estado.equals("INAC"))) {
+                return ResponseEntity.badRequest().body("El estado de cuenta debe ser 'AC' o 'INAC'.");
+            }
+
+            int estrato = request.getEstrato();
+            if (estrato < 1 || estrato > 6) {
+                return ResponseEntity.badRequest().body("El estrato debe estar entre 1 y 6.");
+            }
+
+            double consumo = request.getConsumo();
+            if (consumo < 0) {
+                return ResponseEntity.badRequest().body("El consumo debe ser un número positivo.");
+            }
+
+            int subsidio = request.getSubsidio();
+            if (subsidio < 0) {
+                return ResponseEntity.badRequest().body("El subsidio debe ser un número positivo.");
+            }
+
+            if (request.getTipoVivienda() == null || request.getTipoVivienda().trim().isEmpty()) {
+                return ResponseEntity.badRequest().body("El tipo de vivienda debe ser un string no vacío.");
+            }
+
+            // Llamada al servicio con todos los datos ya validados
+            servicio.actualizarPredioResidencial(
                     request.getId(),
                     request.getSubsidio(),
                     request.getTipoVivienda(),
@@ -124,12 +171,10 @@ public class PredioController {
 
             return new ResponseEntity<>(HttpStatus.OK);
 
-
         } catch (Exception e) {
-
             e.printStackTrace();
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error al actualizar el predio: " + e.getMessage());
         }
     }
 

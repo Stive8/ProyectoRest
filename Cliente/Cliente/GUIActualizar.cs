@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,89 +21,133 @@ namespace Cliente
             this.StartPosition = FormStartPosition.CenterScreen; // Centrar ventana en la pantalla
             txtFecha.ReadOnly = true;
         }
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-
             try
             {
-                // Obtener el ID desde el campo de texto
-                if (!int.TryParse(txtId.Text.Trim(), out int id))
-                {
-                    MessageBox.Show("Error: El ID debe ser un número entero.");
-                    return;
-                }
-
-                // Validar los campos editables
-                if (string.IsNullOrWhiteSpace(txtPropietario.Text) ||
+                // Validación previa de campos obligatorios
+                if (string.IsNullOrWhiteSpace(txtId.Text) ||
+                    string.IsNullOrWhiteSpace(txtPropietario.Text) ||
                     string.IsNullOrWhiteSpace(txtDireccion.Text) ||
                     string.IsNullOrWhiteSpace(txtEstado.Text) ||
+                    string.IsNullOrWhiteSpace(txtEstrato.Text) ||
+                    string.IsNullOrWhiteSpace(txtConsumo.Text) ||
+                    string.IsNullOrWhiteSpace(txtSubsidio.Text) ||
                     string.IsNullOrWhiteSpace(txtVivienda.Text))
                 {
-                    MessageBox.Show("Error: Los campos Propietario, Dirección, Estado y Tipo de Vivienda no pueden estar vacíos.");
+                    MessageBox.Show("Por favor complete todos los campos antes de continuar.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
+                // Validar ID
+                if (!int.TryParse(txtId.Text.Trim(), out int id))
+                {
+                    MessageBox.Show("El ID debe ser un número entero.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validar Propietario (solo letras)
+                string propietario = txtPropietario.Text.Trim();
+                if (!propietario.All(char.IsLetter))
+                {
+                    MessageBox.Show("El campo 'Propietario' solo debe contener letras.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validar EstadoCuenta (AC o INAC)
+                string estado = txtEstado.Text.Trim().ToUpper();
+                if (estado != "AC" && estado != "INAC")
+                {
+                    MessageBox.Show("El campo 'Estado de Cuenta' debe ser 'AC' o 'INAC'.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validar y convertir Estrato
                 if (!int.TryParse(txtEstrato.Text.Trim(), out int estrato))
                 {
-                    MessageBox.Show("Error: El estrato debe ser un número entero.");
+                    MessageBox.Show("El campo 'Estrato' debe ser un número entero válido.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                if (!double.TryParse(txtConsumo.Text.Trim(), out double consumo))
+                if (estrato < 1 || estrato > 6)
                 {
-                    MessageBox.Show("Error: El consumo debe ser un número decimal.");
+                    MessageBox.Show("El campo 'Estrato' debe estar entre 1 y 6.", "Error de valor", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                if (!double.TryParse(txtSubsidio.Text.Trim(), out double subsidio))
+                // Validar Consumo
+                if (!double.TryParse(txtConsumo.Text.Trim(), out double consumo) || consumo < 0)
                 {
-                    MessageBox.Show("Error: El subsidio debe ser un número decimal.");
+                    MessageBox.Show("El campo 'Consumo' debe ser un número positivo.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                // Crear el objeto Request con los datos a actualizar
+                // Validar Subsidio
+                if (!int.TryParse(txtSubsidio.Text.Trim(), out int subsidio) || subsidio < 0)
+                {
+                    MessageBox.Show("El campo 'Subsidio' debe ser un número entero positivo.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validar TipoVivienda (string no vacío)
+                string tipoVivienda = txtVivienda.Text.Trim();
+                if (string.IsNullOrWhiteSpace(tipoVivienda))
+                {
+                    MessageBox.Show("El campo 'Tipo de Vivienda' no puede estar vacío.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string direccion = txtDireccion.Text.Trim();
+
+                // Crear el objeto Request
                 var requestData = new Request
                 {
                     Id = id,
-                    Propietario = txtPropietario.Text.Trim(),
-                    Direccion = txtDireccion.Text.Trim(),
-                    EstadoCuenta = txtEstado.Text.Trim(),
+                    Propietario = propietario,
+                    Direccion = direccion,
+                    EstadoCuenta = estado,
                     Estrato = estrato,
                     Consumo = consumo,
                     Subsidio = subsidio,
-                    TipoVivienda = txtVivienda.Text.Trim()
+                    TipoVivienda = tipoVivienda
                 };
 
-                // Crear el cliente REST
+                // Crear cliente REST
                 var options = new RestClientOptions("http://localhost:8081");
                 var client = new RestClient(options);
 
-                // Crear la solicitud PUT
+                // Crear solicitud PUT
                 var request = new RestRequest($"/predio/actualizar/{id}", Method.Put);
-                request.AddJsonBody(requestData); // Agregar el cuerpo JSON
+                request.AddJsonBody(requestData);
 
-                // Enviar la solicitud
+                // Enviar solicitud
                 var response = client.Execute(request);
 
-                // Verificar la respuesta
+                // Verificar respuesta
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
-                    MessageBox.Show("Predio actualizado exitosamente.");
+                    MessageBox.Show("Predio actualizado exitosamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("Error al actualizar predio: " + response.StatusCode + "\nContenido: " + response.Content);
+                    MessageBox.Show("Error al actualizar predio. Código: " + (int)response.StatusCode + "\nDetalle: " + response.Content, "Error en respuesta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            catch (HttpRequestException ex)
+            {
+                MessageBox.Show("Error de conexión al servidor: " + ex.Message, "Error de red", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Error de formato: " + ex.Message, "Error de datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error inesperado: " + ex.Message);
+                MessageBox.Show("Error inesperado: " + ex.Message, "Error general", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
-        
+
         private void btnConsultar_Click_1(object sender, EventArgs e)
         {
 

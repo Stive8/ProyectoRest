@@ -72,10 +72,39 @@ public class Servicio implements IServicio{
 
     }
 
-
     @Override
     public Residencial actualizarPredioResidencial(int index, int subsidio, String tipoVivienda, String propietario, String direccion, String estadoCuenta, int estrato, double consumo) {
-        Residencial pre = (Residencial) data.getResidenciales().get(index-1);
+        // Validaciones defensivas
+        if (index <= 0 || index > data.getResidenciales().size()) {
+            throw new IllegalArgumentException("El índice del predio es inválido.");
+        }
+        if (propietario == null || propietario.isEmpty()) {
+            throw new IllegalArgumentException("El nombre del propietario no puede estar vacío.");
+        }
+        if (direccion == null || direccion.isEmpty()) {
+            throw new IllegalArgumentException("La dirección no puede estar vacía.");
+        }
+        if (estadoCuenta == null || estadoCuenta.isEmpty()) {
+            throw new IllegalArgumentException("El estado de cuenta no puede estar vacío.");
+        }
+        if (!estadoCuenta.equals("AC") && !estadoCuenta.equals("INAC")) {
+            throw new IllegalArgumentException("El estado de cuenta debe ser 'AC' o 'INAC'.");
+        }
+        if (estrato < 1 || estrato > 6) {
+            throw new IllegalArgumentException("El estrato debe estar entre 1 y 6.");
+        }
+        if (consumo < 0) {
+            throw new IllegalArgumentException("El consumo no puede ser negativo.");
+        }
+        if (subsidio < 0) {
+            throw new IllegalArgumentException("El subsidio no puede ser negativo.");
+        }
+        if (tipoVivienda == null || tipoVivienda.isEmpty()) {
+            throw new IllegalArgumentException("El tipo de vivienda no puede estar vacío.");
+        }
+
+        // Actualizar valores
+        Residencial pre = (Residencial) data.getResidenciales().get(index - 1);
         pre.setConsumo(consumo);
         pre.setDireccion(direccion);
         pre.setEstadoCuenta(estadoCuenta);
@@ -84,8 +113,10 @@ public class Servicio implements IServicio{
         pre.setSubsidio(subsidio);
         pre.setTipoVivienda(tipoVivienda);
 
+        // Recalcular factura
         double valorFactura = pre.calcularPago();
         pre.setValorFactura(valorFactura);
+
         return pre;
     }
 
