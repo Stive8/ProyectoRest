@@ -73,17 +73,25 @@ public class PredioController {
     }
 
     @GetMapping("buscar/{value}")
-    public ResponseEntity<HttpStatus> consultarPredio(@PathVariable("value") Integer value) {
+    public ResponseEntity<?> consultarPredio(@PathVariable("value") Integer value) {
         try {
-            System.out.println("Peticion GET");
-            return new ResponseEntity(servicio.buscarPredioResidencialPorId(value), HttpStatus.OK);
+            System.out.println("Petición GET");
+
+            var predio = servicio.buscarPredioResidencialPorId(value);
+
+            if (predio == null) {
+                // Si no existe, se devuelve un 404 Not Found
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El predio con ID " + value + " no existe.");
+            }
+
+            return new ResponseEntity<>(predio, HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
-            System.out.println("Peticion GET");
-            return ResponseEntity.badRequest().build(); // Devuelve un 400 con cuerpo vacío
+            System.out.println("Petición GET con error");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error inesperado: " + e.getMessage());
         }
-
     }
+
 
     @DeleteMapping("eliminar/{value}")
     public ResponseEntity<Residencial> eliminarPredio(@PathVariable("value") Integer value) {
