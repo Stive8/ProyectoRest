@@ -1,28 +1,43 @@
 package com.acueducto.PredioResidencial.service;
 
-import com.acueducto.PredioResidencial.model.Residencial;
+import com.acueducto.PredioResidencial.model.Comercial;
+import com.acueducto.PredioResidencial.model.LicenciaComercial;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
 public interface IServicio {
 
-    public Residencial crearPredioResidencial(String propietario, String direccion, LocalDateTime fechaRegistro, String estadoCuenta, int estrato, double consumo, int subsidio, String tipoVivienda);
+    Comercial crearPredioComercial(String propietario, String direccion, LocalDateTime fechaRegistro,
+                                   int estrato, double consumo, String tipoComercio);
 
-    public Residencial actualizarPredioResidencial(int index, int subsidio, String tipoVivienda, String propietario, String direccion, String estadoCuenta, int estrato, double consumo);
+    LicenciaComercial crearLicenciaComercial(String representate, String codigo,
+                                             LocalDate fechaVencimiento, int idPredio);
 
-    public void eliminarPredioResidencial(int id);
+    void agregarComercial(Comercial comercial);
 
-    public Optional<Residencial> buscarPredioResidencialPorId(int id);
+    void agregarLicencia(LicenciaComercial licenciaComercial);
 
-    public List<Residencial> getPrediosResidenciales();
+    Comercial actualizarPredioComercial(int index, String propietario, String direccion,
+                                        int estrato, double consumo, String tipoComercio, String codigoLicencia);
 
-    public int incrementarId();
+    void eliminarPredioComercial(int id);
 
-    public void agregarResidencial(Residencial residencial);
+    void eliminarLicencia(String codigo);
 
+    Optional<Comercial> buscarPredioComercialPorId(int id);
 
+    Optional<LicenciaComercial> buscarLicenciaPorId(String codigo);
+
+    List<Comercial> getPrediosComerciales();
+
+    int incrementarId();
+
+    List<LicenciaComercial> getLicenciasComerciales();
+
+    void actualizarLicenciaComercial(String codigo, String representanteLegal, LocalDate fechaVencimiento);
 
 
 }

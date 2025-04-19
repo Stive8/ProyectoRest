@@ -11,17 +11,14 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
-public class Request {
+public class CrearComercialRequest {
 
-    private int id;
     private String propietario;
     private String direccion;
     private LocalDateTime fechaRegistro;
     private int estrato;
     private double consumo;
-    private double valorFactura;
     private String tipoComercio;
-    private String numeroLicenciaComercial;
 
 
 }

@@ -10,19 +10,17 @@ import java.time.LocalDateTime;
 @Setter
 @ToString
 
-public class Residencial {
+public class Comercial {
 
     private int id;
     private String propietario;
     private String direccion;
     private LocalDateTime fechaRegistro;
-    private String estadoCuenta;
     private int estrato;
     private double consumo;
     private double valorFactura;
-    private int subsidio;
-    private String tipoVivienda;
-
+    private String tipoComercio;
+    private String codigoLicenciaComercial;
 
     public double definirTarifa() {
 
@@ -64,24 +62,10 @@ public class Residencial {
 
     }
 
-    public double calcularSubsidio() {
-        switch (getSubsidio()) {
-            case 1:
-                return 0.02;
-            case 2:
-                return 0.05;
-            case 3:
-                return 0.08;
-            default:
-                return 0;
-        }
-    }
 
     public double calcularPago() {
-        double tarifaFinal = definirTarifa() * getConsumo();
-        return tarifaFinal * (1 - calcularSubsidio());
+        return definirTarifa() * getConsumo();
     }
-
 
 
 }

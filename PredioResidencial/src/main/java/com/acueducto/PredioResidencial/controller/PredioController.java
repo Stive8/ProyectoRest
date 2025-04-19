@@ -1,16 +1,16 @@
 package com.acueducto.PredioResidencial.controller;
 
-import com.acueducto.PredioResidencial.model.Employee;
+import com.acueducto.PredioResidencial.model.ActualizarComercialRequest;
+import com.acueducto.PredioResidencial.model.Comercial;
 import com.acueducto.PredioResidencial.model.Request;
-import com.acueducto.PredioResidencial.model.Residencial;
 import com.acueducto.PredioResidencial.service.IServicio;
-import com.acueducto.PredioResidencial.service.Servicio;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @AllArgsConstructor
 @RestController
@@ -25,11 +25,12 @@ public class PredioController {
         System.out.println("Petición POST recibida");
 
         try {
+            /*
             // Validación de campos obligatorios
             if (request.getPropietario() == null || request.getPropietario().trim().isEmpty() ||
                     request.getDireccion() == null || request.getDireccion().trim().isEmpty() ||
-                    request.getEstadoCuenta() == null || request.getEstadoCuenta().trim().isEmpty() ||
-                    request.getTipoVivienda() == null || request.getTipoVivienda().trim().isEmpty()) {
+                    request.getEstrato() < 0 || request.getEstrato() > 6 ||
+                    request.getConsumo() < 0 || request.getConsumo() == null) {
                 return new ResponseEntity<>("Datos incompletos en la solicitud", HttpStatus.BAD_REQUEST);
             }
 
@@ -41,24 +42,17 @@ public class PredioController {
             // Validación de números positivos
             if (request.getEstrato() < 0 || request.getConsumo() < 0 || request.getSubsidio() < 0) {
                 return new ResponseEntity<>("Valores numéricos no pueden ser negativos", HttpStatus.BAD_REQUEST);
-            }
-
-            // Crear el predio residencial
-            Residencial residencial = servicio.crearPredioResidencial(
+            } */
+            Comercial comercial = servicio.crearPredioComercial(
                     request.getPropietario(),
                     request.getDireccion(),
                     request.getFechaRegistro(),
-                    request.getEstadoCuenta(),
                     request.getEstrato(),
                     request.getConsumo(),
-                    request.getSubsidio(),
-                    request.getTipoVivienda()
+                    request.getTipoComercio()
             );
 
-            System.out.println(request.toString());
-            System.out.println(residencial.toString());
-
-            servicio.agregarResidencial(residencial);
+            servicio.agregarComercial(comercial);
 
             return new ResponseEntity<>("Predio creado correctamente", HttpStatus.OK);
 
@@ -77,10 +71,9 @@ public class PredioController {
         try {
             System.out.println("Petición GET");
 
-            var predio = servicio.buscarPredioResidencialPorId(value);
+            var predio = servicio.buscarPredioComercialPorId(value);
 
             if (predio == null) {
-                // Si no existe, se devuelve un 404 Not Found
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El predio con ID " + value + " no existe.");
             }
 
@@ -96,16 +89,14 @@ public class PredioController {
     @DeleteMapping("eliminar/{value}")
     public ResponseEntity<?> eliminarPredio(@PathVariable("value") Integer value) {
         try {
-            var predio = servicio.buscarPredioResidencialPorId(value);
+            var predio = servicio.buscarPredioComercialPorId(value);
 
             if (predio == null) {
-                // Si no existe, se devuelve un 404 Not Found
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El predio con ID " + value + " no existe.");
             }
 
-            // Si existe, se elimina
-            servicio.eliminarPredioResidencial(value);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT); // 204 No Content
+            servicio.eliminarPredioComercial(value);
+            return new ResponseEntity<>("Predio eliminado correctamente", HttpStatus.OK);
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -113,63 +104,28 @@ public class PredioController {
         }
     }
 
-    @PutMapping("actualizar/{id}")
-    public ResponseEntity<?> actualizarPredio(@RequestBody Request request) {
+    @PutMapping("actualizar")
+    public ResponseEntity<?> actualizarPredio(@RequestBody ActualizarComercialRequest request) {
+
+        Optional<Comercial> existenteOpt = servicio.buscarPredioComercialPorId(request.getIndex());
+
+        if (existenteOpt.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("El predio con ID " + request.getIndex() + " no existe.");
+        }
+
         try {
-            // Validar existencia del predio
-            Residencial existente = servicio.buscarPredioResidencialPorId(request.getId())
-                    .orElseThrow(() -> new RuntimeException("El predio con ID " + request.getId() + " no existe."));
-            if (existente == null) {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                        .body("El predio con ID " + request.getId() + " no existe.");
-            }
-
-            // Validaciones de campos
-            if (request.getPropietario() == null || request.getPropietario().trim().isEmpty()) {
-                return ResponseEntity.badRequest().body("El propietario debe ser un string no vacío.");
-            }
-
-            if (request.getDireccion() == null || request.getDireccion().trim().isEmpty()) {
-                return ResponseEntity.badRequest().body("La dirección debe ser un string no vacío.");
-            }
-
-            String estado = request.getEstadoCuenta();
-            if (estado == null || (!estado.equals("AC") && !estado.equals("INAC"))) {
-                return ResponseEntity.badRequest().body("El estado de cuenta debe ser 'AC' o 'INAC'.");
-            }
-
-            int estrato = request.getEstrato();
-            if (estrato < 1 || estrato > 6) {
-                return ResponseEntity.badRequest().body("El estrato debe estar entre 1 y 6.");
-            }
-
-            double consumo = request.getConsumo();
-            if (consumo < 0) {
-                return ResponseEntity.badRequest().body("El consumo debe ser un número positivo.");
-            }
-
-            int subsidio = request.getSubsidio();
-            if (subsidio < 0) {
-                return ResponseEntity.badRequest().body("El subsidio debe ser un número positivo.");
-            }
-
-            if (request.getTipoVivienda() == null || request.getTipoVivienda().trim().isEmpty()) {
-                return ResponseEntity.badRequest().body("El tipo de vivienda debe ser un string no vacío.");
-            }
-
-            // Llamada al servicio con todos los datos ya validados
-            servicio.actualizarPredioResidencial(
-                    request.getId(),
-                    request.getSubsidio(),
-                    request.getTipoVivienda(),
+            servicio.actualizarPredioComercial(
+                    request.getIndex(),
                     request.getPropietario(),
                     request.getDireccion(),
-                    request.getEstadoCuenta(),
                     request.getEstrato(),
-                    request.getConsumo()
+                    request.getConsumo(),
+                    request.getTipoComercio(),
+                    request.getCodigoLicencia()
             );
 
-            return new ResponseEntity<>(HttpStatus.OK);
+            return ResponseEntity.ok("Predio actualizado correctamente");
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -178,11 +134,14 @@ public class PredioController {
         }
     }
 
+
+
+
     @GetMapping("listar")
-    public ResponseEntity<List<Residencial>> listarResidenciales() {
+    public ResponseEntity<List<Comercial>> listarResidenciales() {
         System.out.println("Listar Ok");
         try {
-            List<Residencial> residenciales = servicio.getPrediosResidenciales();
+            List<Comercial> residenciales = servicio.getPrediosComerciales();
             System.out.println("Termino de listas");
             return new ResponseEntity<>(residenciales, HttpStatus.OK);
 

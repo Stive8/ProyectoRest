@@ -1,18 +1,21 @@
 package com.acueducto.PredioResidencial.service;
 
-import com.acueducto.PredioResidencial.model.Residencial;
+import com.acueducto.PredioResidencial.model.Comercial;
+import com.acueducto.PredioResidencial.model.LicenciaComercial;
 import com.acueducto.PredioResidencial.persistence.Data;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @AllArgsConstructor
 @Service
-public class Servicio implements IServicio{
+public class Servicio implements IServicio {
 
     @Autowired
     private final Data data;
@@ -25,8 +28,28 @@ public class Servicio implements IServicio{
     }
 
     @Override
-    public Residencial crearPredioResidencial(String propietario, String direccion, LocalDateTime fechaRegistro,
-                                              String estadoCuenta, int estrato, double consumo, int subsidio, String tipoVivienda) {
+    public List<LicenciaComercial> getLicenciasComerciales() {
+        return data.getLicencias() != null ? new ArrayList<>(data.getLicencias()) : new ArrayList<>();
+    }
+
+    @Override
+    public void actualizarLicenciaComercial(String codigo, String representanteLegal, LocalDate fechaVencimiento) {
+        if (data.getLicencias() == null) {
+            return;
+        }
+
+        for (LicenciaComercial licencia : data.getLicencias()) {
+            if (licencia.getCodigo().equalsIgnoreCase(codigo)) {
+                licencia.setRepresentanteLegal(representanteLegal);
+                licencia.setFechaVencimiento(fechaVencimiento);
+                break;
+            }
+        }
+    }
+
+    @Override
+    public Comercial crearPredioComercial(String propietario, String direccion, LocalDateTime fechaRegistro,
+                                          int estrato, double consumo, String tipoComercio) {
 
         // Validaciones defensivas
         if (propietario == null || propietario.isEmpty()) {
@@ -38,44 +61,48 @@ public class Servicio implements IServicio{
         if (fechaRegistro == null) {
             throw new IllegalArgumentException("La fecha de registro no puede ser nula.");
         }
-        if (estadoCuenta == null || estadoCuenta.isEmpty()) {
-            throw new IllegalArgumentException("El estado de cuenta no puede estar vacío.");
-        }
         if (estrato < 0) {
             throw new IllegalArgumentException("El estrato no puede ser negativo.");
         }
         if (consumo < 0) {
             throw new IllegalArgumentException("El consumo no puede ser negativo.");
         }
-        if (subsidio < 0) {
-            throw new IllegalArgumentException("El subsidio no puede ser negativo.");
-        }
-        if (tipoVivienda == null || tipoVivienda.isEmpty()) {
-            throw new IllegalArgumentException("El tipo de vivienda no puede estar vacío.");
+        if (tipoComercio == null || tipoComercio.isEmpty()) {
+            throw new IllegalArgumentException("El tipo de Comercio no puede estar vacío.");
         }
 
-        // Crear objeto residencial y calcular factura
-        Residencial residencial = new Residencial(incrementarId(), propietario, direccion, fechaRegistro,
-                estadoCuenta, estrato, consumo, 0, subsidio, tipoVivienda);
+        // Crear objeto comercial y calcular factura
+        Comercial comercial = new Comercial(incrementarId(), propietario, direccion, fechaRegistro, estrato, consumo, 0, tipoComercio, "");
 
-        double valorFactura = residencial.calcularPago();
-        residencial.setValorFactura(valorFactura);
+        double valorFactura = comercial.calcularPago();
+        comercial.setValorFactura(valorFactura);
 
-        return residencial;
+        return comercial;
     }
 
     @Override
-    public void agregarResidencial(Residencial residencial) {
-
-        data.getResidenciales().add(residencial);
-
-
+    public LicenciaComercial crearLicenciaComercial(String representate, String codigo, LocalDate fechaVencimiento, int idPredio) {
+        LicenciaComercial licenciaComercial = new LicenciaComercial(representate, codigo, fechaVencimiento);
+        buscarPredioComercialPorId(idPredio).get().setCodigoLicenciaComercial(licenciaComercial.getCodigo());
+        return licenciaComercial;
     }
 
     @Override
-    public Residencial actualizarPredioResidencial(int index, int subsidio, String tipoVivienda, String propietario, String direccion, String estadoCuenta, int estrato, double consumo) {
+    public void agregarComercial(Comercial comercial) {
+        data.getComerciales().add(comercial);
+    }
+
+    @Override
+    public void agregarLicencia(LicenciaComercial licenciaComercial) {
+        data.getLicencias().add(licenciaComercial);
+
+    }
+
+
+    @Override
+    public Comercial actualizarPredioComercial(int index, String propietario, String direccion, int estrato, double consumo, String tipoComercio, String codigoLicencia) {
         // Validaciones defensivas
-        if (index <= 0 || index > data.getResidenciales().size()) {
+        if (index <= 0 || index > data.getComerciales().size()) {
             throw new IllegalArgumentException("El índice del predio es inválido.");
         }
         if (propietario == null || propietario.isEmpty()) {
@@ -84,34 +111,27 @@ public class Servicio implements IServicio{
         if (direccion == null || direccion.isEmpty()) {
             throw new IllegalArgumentException("La dirección no puede estar vacía.");
         }
-        if (estadoCuenta == null || estadoCuenta.isEmpty()) {
-            throw new IllegalArgumentException("El estado de cuenta no puede estar vacío.");
-        }
-        if (!estadoCuenta.equals("AC") && !estadoCuenta.equals("INAC")) {
-            throw new IllegalArgumentException("El estado de cuenta debe ser 'AC' o 'INAC'.");
-        }
         if (estrato < 1 || estrato > 6) {
             throw new IllegalArgumentException("El estrato debe estar entre 1 y 6.");
         }
         if (consumo < 0) {
             throw new IllegalArgumentException("El consumo no puede ser negativo.");
         }
-        if (subsidio < 0) {
-            throw new IllegalArgumentException("El subsidio no puede ser negativo.");
+        if (tipoComercio == null || tipoComercio.isEmpty()) {
+            throw new IllegalArgumentException("El tipo de comercio no puede estar vacío.");
         }
-        if (tipoVivienda == null || tipoVivienda.isEmpty()) {
-            throw new IllegalArgumentException("El tipo de vivienda no puede estar vacío.");
+        if (codigoLicencia == null || codigoLicencia.isEmpty()) {
+            throw new IllegalArgumentException("El tipo de comercio no puede estar vacío.");
         }
 
         // Actualizar valores
-        Residencial pre = (Residencial) data.getResidenciales().get(index - 1);
+        Comercial pre = (Comercial) data.getComerciales().get(index - 1);
         pre.setConsumo(consumo);
         pre.setDireccion(direccion);
-        pre.setEstadoCuenta(estadoCuenta);
         pre.setEstrato(estrato);
         pre.setPropietario(propietario);
-        pre.setSubsidio(subsidio);
-        pre.setTipoVivienda(tipoVivienda);
+        pre.setTipoComercio(tipoComercio);
+        pre.setCodigoLicenciaComercial(codigoLicencia);
 
         // Recalcular factura
         double valorFactura = pre.calcularPago();
@@ -121,34 +141,71 @@ public class Servicio implements IServicio{
     }
 
     @Override
-    public void eliminarPredioResidencial(int id) {
+    public void eliminarPredioComercial(int id) {
 
-        data.getResidenciales().remove(id-1);
+        data.getComerciales().remove(id - 1);
 
     }
 
     @Override
-    public Optional<Residencial> buscarPredioResidencialPorId(int id) {
+    public void eliminarLicencia(String codigo) {
+        // Verificar si existe un Comercial con esa licencia
+        buscarComercialPorLicencia(codigo).ifPresent(comercial ->
+                comercial.setCodigoLicenciaComercial("")
+        );
 
-        System.out.println(data.getResidenciales().toString());
-        for (Residencial red : data.getResidenciales()) {
+        // Verificar si las licencias existen y eliminar la licencia
+        if (data.getLicencias() != null) {
+            data.getLicencias().removeIf(licencia -> licencia.getCodigo().equalsIgnoreCase(codigo));
+        }
+    }
+
+    @Override
+    public Optional<Comercial> buscarPredioComercialPorId(int id) {
+        for (Comercial red : data.getComerciales()) {
             if (red.getId() == id) {
                 return Optional.of(red);
             }
         }
-        return null;
+        return Optional.empty();
     }
 
     @Override
-    public List<Residencial> getPrediosResidenciales() {
-        return data.getResidenciales();
+    public Optional<LicenciaComercial> buscarLicenciaPorId(String codigo) {
+        for (LicenciaComercial licenciaComercial : data.getLicencias()) {
+            if (licenciaComercial.getCodigo().equalsIgnoreCase(codigo)) {
+                return Optional.of(licenciaComercial);
+            }
+        }
+        return Optional.empty();
     }
 
 
-    public void imprimirResidencial(){
-        for (Residencial red: data.getResidenciales()){
+    @Override
+    public List<Comercial> getPrediosComerciales() {
+        return data.getComerciales();
+    }
+
+
+    public void imprimirComerciales() {
+        for (Comercial red : data.getComerciales()) {
             System.out.println(red);
         }
     }
+
+    public Optional<Comercial> buscarComercialPorLicencia(String codigo) {
+        if (data.getComerciales() == null || codigo == null) {
+            return Optional.empty();
+        }
+
+        for (Comercial comercial : data.getComerciales()) {
+            if (comercial.getCodigoLicenciaComercial() != null &&
+                    comercial.getCodigoLicenciaComercial().equalsIgnoreCase(codigo)) {
+                return Optional.of(comercial);
+            }
+        }
+        return Optional.empty();
+    }
+
 
 }
