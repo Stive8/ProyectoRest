@@ -111,3 +111,4 @@ C:\Users\PC\Downloads\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.csproj.Core
 C:\Users\PC\Downloads\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.csproj.Up2Date
 C:\Users\PC\Downloads\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.exe
 C:\Users\PC\Downloads\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.pdb
+C:\Users\Usuario\Documents\GitHub\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.GUIActualizar.resources

@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\PC\\Downloads\\ProyectoRest\\Cliente\\",
+  "WorkspaceRootPath": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\pc\\downloads\\proyectorest\\cliente\\cliente\\guiactualizar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\guiactualizar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\usuario\\documents\\github\\proyectorest\\cliente\\cliente\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\pc\\downloads\\proyectorest\\cliente\\cliente\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\cliente\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\usuario\\documents\\github\\proyectorest\\cliente\\cliente\\guiactualizar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\guiactualizar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +22,42 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form2.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form2.cs",
+              "RelativeDocumentMoniker": "Cliente\\Form2.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form2.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Cliente\\Form2.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-21T02:57:05.031Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Form2.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\ProyectoRest\\Cliente\\Cliente\\Form2.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form2.cs",
               "RelativeDocumentMoniker": "Cliente\\Form2.cs",
-              "ToolTip": "C:\\Users\\PC\\Downloads\\ProyectoRest\\Cliente\\Cliente\\Form2.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form2.cs",
               "RelativeToolTip": "Cliente\\Form2.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAwwHMAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAwwCYAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-16T20:16:37.093Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "GUIActualizar.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Downloads\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs",
+              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs",
               "RelativeDocumentMoniker": "Cliente\\GUIActualizar.cs",
-              "ToolTip": "C:\\Users\\PC\\Downloads\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs",
+              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs",
               "RelativeToolTip": "Cliente\\GUIActualizar.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAqwBcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAcwAMAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-16T20:12:04.638Z",
               "EditorCaption": ""

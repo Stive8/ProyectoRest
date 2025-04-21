@@ -33,11 +33,11 @@ namespace Cliente
                 // Validación previa de campos obligatorios
                 if (string.IsNullOrWhiteSpace(txtPropietario.Text) ||
                     string.IsNullOrWhiteSpace(txtDireccion.Text) ||
-                    string.IsNullOrWhiteSpace(txtEstado.Text) ||
+                //    string.IsNullOrWhiteSpace(txtEstado.Text) ||
                     string.IsNullOrWhiteSpace(txtEstrato.Text) ||
                     string.IsNullOrWhiteSpace(txtConsumo.Text) ||
-                    string.IsNullOrWhiteSpace(txtSubsidio.Text) ||
-                    string.IsNullOrWhiteSpace(txtVivienda.Text))
+                //    string.IsNullOrWhiteSpace(txtSubsidio.Text) ||
+                    string.IsNullOrWhiteSpace(txtComercio.Text))
                 {
                     MessageBox.Show("Por favor complete todos los campos antes de continuar.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -46,8 +46,8 @@ namespace Cliente
                 string propietario = txtPropietario.Text.Trim();
                 string direccion = txtDireccion.Text.Trim();
                 string fechaRegistro = txtFecha.Text;
-                string estadoCuenta = txtEstado.Text.Trim();
-                string tipoVivienda = txtVivienda.Text.Trim();
+                //string estadoCuenta = txtEstado.Text.Trim();
+                string tipoComercio = txtComercio.Text.Trim();
 
                 // Validación propietario (ya es string por definición)
                 if (!propietario.All(char.IsLetter))
@@ -57,11 +57,11 @@ namespace Cliente
                 }
 
                 // Validación estadoCuenta ("AC" o "INAC")
-                if (estadoCuenta != "AC" && estadoCuenta != "INAC")
-                {
-                    MessageBox.Show("El campo 'Estado de Cuenta' debe ser 'AC' o 'INAC'.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                //if (estadoCuenta != "AC" && estadoCuenta != "INAC")
+                //{
+                //    MessageBox.Show("El campo 'Estado de Cuenta' debe ser 'AC' o 'INAC'.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    return;
+                //}
 
                 // Validación tipoVivienda (ya es string si no está vacío)
 
@@ -84,11 +84,11 @@ namespace Cliente
                     return;
                 }
 
-                if (!int.TryParse(txtSubsidio.Text.Trim(), out int subsidio))
-                {
-                    MessageBox.Show("El campo 'Subsidio' debe ser un número entero válido.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                //if (!int.TryParse(txtSubsidio.Text.Trim(), out int subsidio))
+                //{
+                //    MessageBox.Show("El campo 'Subsidio' debe ser un número entero válido.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    return;
+                //}
 
                 // Crear el cliente REST
                 var options = new RestClientOptions("http://localhost:8081");
@@ -102,11 +102,11 @@ namespace Cliente
                     propietario = propietario,
                     direccion = direccion,
                     fechaRegistro = fechaRegistro,
-                    estadoCuenta = estadoCuenta,
+                    //estadoCuenta = estadoCuenta,
                     estrato = estrato,
                     consumo = consumo,
-                    subsidio = subsidio,
-                    tipoVivienda = tipoVivienda
+                    //subsidio = subsidio,
+                    tipoComercio = tipoComercio
                 });
 
                 // Enviar la solicitud
