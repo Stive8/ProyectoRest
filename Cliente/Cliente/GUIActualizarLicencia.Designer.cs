@@ -61,21 +61,21 @@
             // 
             // txtFechaVencimiento
             // 
-            this.txtFechaVencimiento.Location = new System.Drawing.Point(192, 153);
+            this.txtFechaVencimiento.Location = new System.Drawing.Point(282, 153);
             this.txtFechaVencimiento.Name = "txtFechaVencimiento";
             this.txtFechaVencimiento.Size = new System.Drawing.Size(172, 22);
             this.txtFechaVencimiento.TabIndex = 15;
             // 
             // txtRepresentante
             // 
-            this.txtRepresentante.Location = new System.Drawing.Point(192, 104);
+            this.txtRepresentante.Location = new System.Drawing.Point(282, 105);
             this.txtRepresentante.Name = "txtRepresentante";
             this.txtRepresentante.Size = new System.Drawing.Size(172, 22);
             this.txtRepresentante.TabIndex = 14;
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(192, 60);
+            this.txtCodigo.Location = new System.Drawing.Point(282, 61);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(172, 22);
             this.txtCodigo.TabIndex = 13;
@@ -85,9 +85,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(32, 156);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(144, 16);
+            this.label4.Size = new System.Drawing.Size(241, 16);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Fecha de Vencimiento:";
+            this.label4.Text = "Fecha de Vencimiento (YYYY-MM-DD):";
             // 
             // label3
             // 
@@ -120,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(401, 281);
+            this.ClientSize = new System.Drawing.Size(537, 264);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.txtFechaVencimiento);
@@ -131,7 +131,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "GUIActualizarLicencia";
-            this.Text = "GUIActualizarLicencia";
+            this.Text = "ActualizarLicencia";
             this.ResumeLayout(false);
             this.PerformLayout();
 

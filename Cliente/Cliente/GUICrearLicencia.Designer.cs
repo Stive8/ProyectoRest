@@ -43,17 +43,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(111, 9);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(29, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(356, 32);
+            this.label1.Size = new System.Drawing.Size(157, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Crear Licencia Comercial";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(147, 63);
+            this.label2.Location = new System.Drawing.Point(38, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 16);
             this.label2.TabIndex = 1;
@@ -62,7 +62,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(137, 114);
+            this.label3.Location = new System.Drawing.Point(38, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(136, 16);
             this.label3.TabIndex = 2;
@@ -71,16 +71,17 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(32, 164);
+            this.label4.Location = new System.Drawing.Point(38, 161);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(241, 16);
             this.label4.TabIndex = 3;
             this.label4.Text = "Fecha de Vencimiento (YYYY-MM-DD):";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(185, 211);
+            this.label5.Location = new System.Drawing.Point(38, 211);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 16);
             this.label5.TabIndex = 4;
@@ -95,14 +96,14 @@
             // 
             // txtRepresentante
             // 
-            this.txtRepresentante.Location = new System.Drawing.Point(279, 111);
+            this.txtRepresentante.Location = new System.Drawing.Point(279, 108);
             this.txtRepresentante.Name = "txtRepresentante";
             this.txtRepresentante.Size = new System.Drawing.Size(188, 22);
             this.txtRepresentante.TabIndex = 6;
             // 
             // txtFechaVencimiento
             // 
-            this.txtFechaVencimiento.Location = new System.Drawing.Point(279, 161);
+            this.txtFechaVencimiento.Location = new System.Drawing.Point(279, 158);
             this.txtFechaVencimiento.Name = "txtFechaVencimiento";
             this.txtFechaVencimiento.Size = new System.Drawing.Size(188, 22);
             this.txtFechaVencimiento.TabIndex = 7;
@@ -116,7 +117,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(238, 259);
+            this.button1.Location = new System.Drawing.Point(229, 251);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 9;
@@ -128,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 317);
+            this.ClientSize = new System.Drawing.Size(536, 294);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtIdPredio);
             this.Controls.Add(this.txtFechaVencimiento);
@@ -140,7 +141,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "GUICrearLicencia";
-            this.Text = "GUICrearLicencia";
+            this.Text = "CrearLicencia";
             this.ResumeLayout(false);
             this.PerformLayout();
 
