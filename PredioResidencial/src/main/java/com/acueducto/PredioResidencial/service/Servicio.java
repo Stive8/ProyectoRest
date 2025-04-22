@@ -100,60 +100,33 @@ public class Servicio implements IServicio {
 
 
     @Override
-    public Comercial actualizarPredioComercial(int id, String propietario, String direccion, int estrato, double consumo, String tipoComercio, String codigoLicencia) {
-        // Validaciones defensivas
-        if (propietario == null || propietario.isEmpty()) {
-            throw new IllegalArgumentException("El nombre del propietario no puede estar vacío.");
-        }
-        if (direccion == null || direccion.isEmpty()) {
-            throw new IllegalArgumentException("La dirección no puede estar vacía.");
-        }
-        if (estrato < 1 || estrato > 6) {
-            throw new IllegalArgumentException("El estrato debe estar entre 1 y 6.");
-        }
-        if (consumo < 0) {
-            throw new IllegalArgumentException("El consumo no puede ser negativo.");
-        }
-        if (tipoComercio == null || tipoComercio.isEmpty()) {
-            throw new IllegalArgumentException("El tipo de comercio no puede estar vacío.");
+    public Comercial actualizarPredioComercial(int index, String propietario, String direccion, int estrato, double consumo, String tipoComercio, String codigoLicencia) {
+        // Validar solo el índice
+        if (index <= 0 || index > data.getComerciales().size()) {
+            throw new IllegalArgumentException("El índice del predio es inválido.");
         }
 
+        // Actualizar valores
+        Comercial pre = (Comercial) data.getComerciales().get(index - 1);
+        pre.setConsumo(consumo);
+        pre.setDireccion(direccion != null ? direccion : "");
+        pre.setEstrato(estrato);
+        pre.setPropietario(propietario != null ? propietario : "");
+        pre.setTipoComercio(tipoComercio != null ? tipoComercio : "");
+        pre.setCodigoLicenciaComercial(codigoLicencia != null ? codigoLicencia : "");
 
-        // Buscar el predio comercial por ID
+        // Recalcular factura
+        double valorFactura = pre.calcularPago();
+        pre.setValorFactura(valorFactura);
 
-
-
-        Optional<Comercial> comercialOpt = buscarPredioComercialPorId(id);
-        if (!comercialOpt.isPresent()) {
-            throw new IllegalArgumentException("No se encontró un predio comercial con el ID proporcionado.");
-        }
-
-        Comercial comercial = comercialOpt.get();
-        comercial.setPropietario(propietario);
-        comercial.setDireccion(direccion);
-        comercial.setEstrato(estrato);
-        comercial.setConsumo(consumo);
-        comercial.setTipoComercio(tipoComercio);
-        comercial.setCodigoLicenciaComercial(codigoLicencia);
-
-        // Recalcular la factura
-        double valorFactura = comercial.calcularPago();
-        comercial.setValorFactura(valorFactura);
-
-        return comercial;
+        return pre;
     }
-
 
     @Override
     public void eliminarPredioComercial(int id) {
-        List<Comercial> comerciales = data.getComerciales();
-        for (int i = 0; i < comerciales.size(); i++) {
-            if (comerciales.get(i).getId() == id) {
-                comerciales.remove(i);
-                return;
-            }
-        }
-        throw new IllegalArgumentException("No se encontró un predio comercial con el ID: " + id);
+
+        data.getComerciales().remove(id - 1);
+
     }
 
     @Override

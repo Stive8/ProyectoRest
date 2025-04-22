@@ -1,54 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\",
+  "WorkspaceRootPath": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\usuario\\documents\\github\\proyectorest\\cliente\\cliente\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\asus\\documents\\univerisdad\\aplicacionesempresariales\\proyectorest\\cliente\\cliente\\guiconsultarlicencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\guiconsultarlicencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\usuario\\documents\\github\\proyectorest\\cliente\\cliente\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\request.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\asus\\documents\\univerisdad\\aplicacionesempresariales\\proyectorest\\cliente\\cliente\\guicrearlicencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\guicrearlicencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Residencial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Cliente\\Residencial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\asus\\documents\\univerisdad\\aplicacionesempresariales\\proyectorest\\cliente\\cliente\\guiactualizarlicencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\guiactualizarlicencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\cliente\\guiactualizar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\guiactualizar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\usuario\\documents\\github\\proyectorest\\cliente\\cliente\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\usuario\\documents\\github\\proyectorest\\cliente\\cliente\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\cliente\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\usuario\\documents\\github\\proyectorest\\cliente\\cliente\\guiactualizar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\guiactualizar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\usuario\\documents\\github\\proyectorest\\cliente\\cliente\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form5.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\usuario\\documents\\github\\proyectorest\\cliente\\cliente\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form4.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\usuario\\documents\\github\\proyectorest\\cliente\\cliente\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\usuario\\documents\\github\\proyectorest\\cliente\\cliente\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|c:\\users\\asus\\documents\\univerisdad\\aplicacionesempresariales\\proyectorest\\cliente\\cliente\\guieliminarlicencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E95E5C06-1B6F-4829-9B81-9E6FC6D58953}|Cliente\\Cliente.csproj|solutionrelative:cliente\\guieliminarlicencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -58,157 +26,54 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Form2.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form2.cs",
-              "RelativeDocumentMoniker": "Cliente\\Form2.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form2.cs",
-              "RelativeToolTip": "Cliente\\Form2.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAwwDUAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T20:16:37.093Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Form3.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form3.cs",
-              "RelativeDocumentMoniker": "Cliente\\Form3.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form3.cs",
-              "RelativeToolTip": "Cliente\\Form3.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAtwDIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T20:15:14.625Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Form4.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form4.cs",
-              "RelativeDocumentMoniker": "Cliente\\Form4.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form4.cs",
-              "RelativeToolTip": "Cliente\\Form4.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T20:20:05.774Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Form5.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form5.cs",
-              "RelativeDocumentMoniker": "Cliente\\Form5.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form5.cs",
-              "RelativeToolTip": "Cliente\\Form5.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T20:21:47.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GUIActualizar.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs",
-              "RelativeDocumentMoniker": "Cliente\\GUIActualizar.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs",
-              "RelativeToolTip": "Cliente\\GUIActualizar.cs",
-              "ViewState": "AgIAAJgAAAAAAAAAAAAwwKsAAABGAAAAAAAAAA==",
+              "Title": "GUIEliminarLicencia.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUIEliminarLicencia.cs",
+              "RelativeDocumentMoniker": "Cliente\\GUIEliminarLicencia.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUIEliminarLicencia.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Cliente\\GUIEliminarLicencia.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-16T20:12:04.638Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Request.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Request.cs",
-              "RelativeDocumentMoniker": "Cliente\\Request.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Request.cs",
-              "RelativeToolTip": "Cliente\\Request.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T21:04:15.715Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-22T22:40:19.654Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Residencial.cs",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Residencial.cs",
-              "RelativeDocumentMoniker": "Cliente\\Residencial.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Residencial.cs",
-              "RelativeToolTip": "Cliente\\Residencial.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAkAAAAAAAAAA==",
+              "Title": "GUIActualizarLicencia.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUIActualizarLicencia.cs",
+              "RelativeDocumentMoniker": "Cliente\\GUIActualizarLicencia.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUIActualizarLicencia.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Cliente\\GUIActualizarLicencia.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T20:51:25.882Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Form5.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form5.cs",
-              "RelativeDocumentMoniker": "Cliente\\Form5.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form5.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Cliente\\Form5.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T20:59:05.813Z",
+              "WhenOpened": "2025-04-22T22:36:53.956Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GUIActualizar.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs",
-              "RelativeDocumentMoniker": "Cliente\\GUIActualizar.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\GUIActualizar.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Cliente\\GUIActualizar.cs [Dise\u00F1o]",
+              "DocumentIndex": 1,
+              "Title": "GUICrearLicencia.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUICrearLicencia.cs",
+              "RelativeDocumentMoniker": "Cliente\\GUICrearLicencia.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUICrearLicencia.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Cliente\\GUICrearLicencia.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T21:01:01.98Z",
+              "WhenOpened": "2025-04-22T22:37:07.771Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Form4.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form4.cs",
-              "RelativeDocumentMoniker": "Cliente\\Form4.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form4.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Cliente\\Form4.cs [Dise\u00F1o]",
+              "DocumentIndex": 0,
+              "Title": "GUIConsultarLicencia.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUIConsultarLicencia.cs",
+              "RelativeDocumentMoniker": "Cliente\\GUIConsultarLicencia.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Documents\\Univerisdad\\AplicacionesEmpresariales\\ProyectoRest\\Cliente\\Cliente\\GUIConsultarLicencia.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Cliente\\GUIConsultarLicencia.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T20:56:49.455Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Form2.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form2.cs",
-              "RelativeDocumentMoniker": "Cliente\\Form2.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form2.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Cliente\\Form2.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T02:57:05.031Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Form3.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form3.cs",
-              "RelativeDocumentMoniker": "Cliente\\Form3.cs",
-              "ToolTip": "C:\\Users\\Usuario\\Documents\\GitHub\\ProyectoRest\\Cliente\\Cliente\\Form3.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Cliente\\Form3.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T20:27:30.728Z",
+              "WhenOpened": "2025-04-22T22:37:04.769Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

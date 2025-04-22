@@ -87,7 +87,7 @@ class GuiPrincipal:
 
 
     def mostrar_acerca_de(self):
-        messagebox.showinfo("Acerca de", "Sistema Comercial v1.0\nDesarrollado en Python con Tkinter")
+        messagebox.showinfo("Acerca de", "Desarrollado por \n Juanita Rodriguez \n Brayhan Ortegon \n Stiven Alvarez")
 
     def centrar_ventana(self):
         self.root.update_idletasks()
