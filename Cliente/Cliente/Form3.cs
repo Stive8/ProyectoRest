@@ -43,11 +43,11 @@ namespace Cliente
                     txtPropietario.Text = predio.Propietario;
                     txtDireccion.Text = predio.Direccion;
                     txtFecha.Text = predio.FechaRegistro.ToString("yyyy-MM-ddTHH:mm:ss");
-                    txtEstado.Text = predio.EstadoCuenta;
+                    //txtEstado.Text = predio.EstadoCuenta;
                     txtEstrato.Text = predio.Estrato.ToString();
                     txtConsumo.Text = predio.Consumo.ToString();
-                    txtSubsidio.Text = predio.Subsidio.ToString();
-                    txtVivienda.Text = predio.TipoVivienda;
+                    //txtSubsidio.Text = predio.Subsidio.ToString();
+                    txtComercio.Text = predio.TipoComercio;
                 }
                 else
                 {

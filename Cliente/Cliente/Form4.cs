@@ -22,17 +22,14 @@ namespace Cliente
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
             try
             {
-                // Obtener el ID desde el campo de texto
                 if (!int.TryParse(txtId.Text.Trim(), out int id))
                 {
                     MessageBox.Show("Error: El ID debe ser un número entero.");
                     return;
                 }
 
-                // Confirmar eliminación (opcional, pero recomendado)
                 DialogResult result = MessageBox.Show($"¿Estás seguro de eliminar el predio con ID {id}?",
                                                       "Confirmar eliminación",
                                                       MessageBoxButtons.YesNo,
@@ -42,17 +39,11 @@ namespace Cliente
                     return;
                 }
 
-                // Crear el cliente REST
-                var options = new RestClientOptions("http://localhost:8081");
-                var client = new RestClient(options);
-
-                // Crear la solicitud DELETE
+                var client = new RestClient("http://localhost:8081");
                 var request = new RestRequest($"/predio/eliminar/{id}", Method.Delete);
-
-                // Enviar la solicitud
                 var response = client.Execute(request);
 
-                if (response.StatusCode == System.Net.HttpStatusCode.NoContent) // Cambia OK por NoContent
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     MessageBox.Show("Predio eliminado exitosamente.");
                     LimpiarCampos();
@@ -66,7 +57,6 @@ namespace Cliente
             {
                 MessageBox.Show("Error inesperado: " + ex.Message);
             }
-
         }
         private void LimpiarCampos()
         {
@@ -74,16 +64,15 @@ namespace Cliente
             txtPropietario.Text = "";
             txtDireccion.Text = "";
             txtFecha.Text = "";
-            txtEstado.Text = "";
+            //txtEstado.Text = "";
             txtEstrato.Text = "";
             txtConsumo.Text = "";
-            txtSubsidio.Text = "";
-            txtVivienda.Text = "";
+            //txtSubsidio.Text = "";
+            txtComercio.Text = "";
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if (!int.TryParse(txtId.Text.Trim(), out int id))
@@ -92,11 +81,8 @@ namespace Cliente
                     return;
                 }
 
-                var options = new RestClientOptions("http://localhost:8081");
-                var client = new RestClient(options);
-
+                var client = new RestClient("http://localhost:8081");
                 var request = new RestRequest($"/predio/buscar/{id}", Method.Get);
-
                 var response = client.Execute(request);
 
                 if (response.StatusCode == System.Net.HttpStatusCode.OK)
@@ -105,11 +91,9 @@ namespace Cliente
                     txtPropietario.Text = predio.Propietario;
                     txtDireccion.Text = predio.Direccion;
                     txtFecha.Text = predio.FechaRegistro.ToString("yyyy-MM-ddTHH:mm:ss");
-                    txtEstado.Text = predio.EstadoCuenta;
                     txtEstrato.Text = predio.Estrato.ToString();
                     txtConsumo.Text = predio.Consumo.ToString();
-                    txtSubsidio.Text = predio.Subsidio.ToString();
-                    txtVivienda.Text = predio.TipoVivienda;
+                    txtComercio.Text = predio.TipoComercio;
                 }
                 else
                 {
@@ -120,7 +104,6 @@ namespace Cliente
             {
                 MessageBox.Show("Error inesperado: " + ex.Message);
             }
-
         }
     }
 }

@@ -33,14 +33,7 @@ namespace Cliente
             // Filtrar según los botones seleccionados
             List<Residencial> filtrados = new List<Residencial>(residenciales);
 
-            if (btnActivos.Checked)
-            {
-                filtrados = residenciales.Where(red => red.EstadoCuenta.Equals("AC", StringComparison.OrdinalIgnoreCase)).ToList();
-            }
-            else if (btnInactivos.Checked)
-            {
-                filtrados = residenciales.Where(red => red.EstadoCuenta.Equals("INAC", StringComparison.OrdinalIgnoreCase)).ToList();
-            }
+            
 
             if (btnEstratoBajo.Checked)
             {

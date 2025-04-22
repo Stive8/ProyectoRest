@@ -30,8 +30,6 @@
         {
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnListar = new System.Windows.Forms.Button();
-            this.btnActivos = new System.Windows.Forms.RadioButton();
-            this.btnInactivos = new System.Windows.Forms.RadioButton();
             this.btnEstratoBajo = new System.Windows.Forms.RadioButton();
             this.btnEstrtatoAlto = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -57,34 +55,12 @@
             this.btnListar.UseVisualStyleBackColor = true;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
-            // btnActivos
-            // 
-            this.btnActivos.AutoSize = true;
-            this.btnActivos.Location = new System.Drawing.Point(28, 265);
-            this.btnActivos.Name = "btnActivos";
-            this.btnActivos.Size = new System.Drawing.Size(69, 20);
-            this.btnActivos.TabIndex = 4;
-            this.btnActivos.TabStop = true;
-            this.btnActivos.Text = "Activar";
-            this.btnActivos.UseVisualStyleBackColor = true;
-            // 
-            // btnInactivos
-            // 
-            this.btnInactivos.AutoSize = true;
-            this.btnInactivos.Location = new System.Drawing.Point(122, 265);
-            this.btnInactivos.Name = "btnInactivos";
-            this.btnInactivos.Size = new System.Drawing.Size(81, 20);
-            this.btnInactivos.TabIndex = 5;
-            this.btnInactivos.TabStop = true;
-            this.btnInactivos.Text = "Inactivos";
-            this.btnInactivos.UseVisualStyleBackColor = true;
-            // 
             // btnEstratoBajo
             // 
             this.btnEstratoBajo.AutoSize = true;
-            this.btnEstratoBajo.Location = new System.Drawing.Point(228, 265);
+            this.btnEstratoBajo.Location = new System.Drawing.Point(12, 265);
             this.btnEstratoBajo.Name = "btnEstratoBajo";
-            this.btnEstratoBajo.Size = new System.Drawing.Size(100, 20);
+            this.btnEstratoBajo.Size = new System.Drawing.Size(85, 17);
             this.btnEstratoBajo.TabIndex = 6;
             this.btnEstratoBajo.TabStop = true;
             this.btnEstratoBajo.Text = "Estrato 1,2,3";
@@ -93,9 +69,9 @@
             // btnEstrtatoAlto
             // 
             this.btnEstrtatoAlto.AutoSize = true;
-            this.btnEstrtatoAlto.Location = new System.Drawing.Point(353, 265);
+            this.btnEstrtatoAlto.Location = new System.Drawing.Point(103, 265);
             this.btnEstrtatoAlto.Name = "btnEstrtatoAlto";
-            this.btnEstrtatoAlto.Size = new System.Drawing.Size(100, 20);
+            this.btnEstrtatoAlto.Size = new System.Drawing.Size(85, 17);
             this.btnEstrtatoAlto.TabIndex = 7;
             this.btnEstrtatoAlto.TabStop = true;
             this.btnEstrtatoAlto.Text = "Estrato 4,5,6";
@@ -106,8 +82,6 @@
             this.ClientSize = new System.Drawing.Size(611, 300);
             this.Controls.Add(this.btnEstrtatoAlto);
             this.Controls.Add(this.btnEstratoBajo);
-            this.Controls.Add(this.btnInactivos);
-            this.Controls.Add(this.btnActivos);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.dataGridView2);
             this.Name = "Listar";
@@ -132,8 +106,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn valorFactura;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button btnListar;
-        private System.Windows.Forms.RadioButton btnActivos;
-        private System.Windows.Forms.RadioButton btnInactivos;
         private System.Windows.Forms.RadioButton btnEstratoBajo;
         private System.Windows.Forms.RadioButton btnEstrtatoAlto;
     }

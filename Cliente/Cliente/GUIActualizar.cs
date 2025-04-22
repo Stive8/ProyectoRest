@@ -29,11 +29,11 @@ namespace Cliente
                 if (string.IsNullOrWhiteSpace(txtId.Text) ||
                     string.IsNullOrWhiteSpace(txtPropietario.Text) ||
                     string.IsNullOrWhiteSpace(txtDireccion.Text) ||
-                    string.IsNullOrWhiteSpace(txtEstado.Text) ||
+                    //string.IsNullOrWhiteSpace(txtEstado.Text) ||
                     string.IsNullOrWhiteSpace(txtEstrato.Text) ||
                     string.IsNullOrWhiteSpace(txtConsumo.Text) ||
-                    string.IsNullOrWhiteSpace(txtSubsidio.Text) ||
-                    string.IsNullOrWhiteSpace(txtVivienda.Text))
+                    //string.IsNullOrWhiteSpace(txtSubsidio.Text) ||
+                    string.IsNullOrWhiteSpace(txtComercio.Text))
                 {
                     MessageBox.Show("Por favor complete todos los campos antes de continuar.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -55,12 +55,12 @@ namespace Cliente
                 }
 
                 // Validar EstadoCuenta (AC o INAC)
-                string estado = txtEstado.Text.Trim().ToUpper();
+                /*string estado = txtEstado.Text.Trim().ToUpper();
                 if (estado != "AC" && estado != "INAC")
                 {
                     MessageBox.Show("El campo 'Estado de Cuenta' debe ser 'AC' o 'INAC'.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
-                }
+                }*/
 
                 // Validar y convertir Estrato
                 if (!int.TryParse(txtEstrato.Text.Trim(), out int estrato))
@@ -83,15 +83,15 @@ namespace Cliente
                 }
 
                 // Validar Subsidio
-                if (!int.TryParse(txtSubsidio.Text.Trim(), out int subsidio) || subsidio < 0)
+                /*if (!int.TryParse(txtSubsidio.Text.Trim(), out int subsidio) || subsidio < 0)
                 {
                     MessageBox.Show("El campo 'Subsidio' debe ser un número entero positivo.", "Error de formato", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
-                }
+                }*/
 
                 // Validar TipoVivienda (string no vacío)
-                string tipoVivienda = txtVivienda.Text.Trim();
-                if (string.IsNullOrWhiteSpace(tipoVivienda))
+                string tipoComercio = txtComercio.Text.Trim();
+                if (string.IsNullOrWhiteSpace(tipoComercio))
                 {
                     MessageBox.Show("El campo 'Tipo de Vivienda' no puede estar vacío.", "Campos incompletos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -105,11 +105,11 @@ namespace Cliente
                     Id = id,
                     Propietario = propietario,
                     Direccion = direccion,
-                    EstadoCuenta = estado,
+                    //EstadoCuenta = estado,
                     Estrato = estrato,
                     Consumo = consumo,
-                    Subsidio = subsidio,
-                    TipoVivienda = tipoVivienda
+                    //Subsidio = subsidio,
+                    TipoComercio = tipoComercio
                 };
 
                 // Crear cliente REST
@@ -117,7 +117,7 @@ namespace Cliente
                 var client = new RestClient(options);
 
                 // Crear solicitud PUT
-                var request = new RestRequest($"/predio/actualizar/{id}", Method.Put);
+                var request = new RestRequest($"/predio/actualizar", Method.Put);
                 request.AddJsonBody(requestData);
 
                 // Enviar solicitud
@@ -173,11 +173,11 @@ namespace Cliente
                     txtPropietario.Text = predio.Propietario;
                     txtDireccion.Text = predio.Direccion;
                     txtFecha.Text = predio.FechaRegistro.ToString("yyyy-MM-ddTHH:mm:ss");
-                    txtEstado.Text = predio.EstadoCuenta;
+                    //txtEstado.Text = predio.EstadoCuenta;
                     txtEstrato.Text = predio.Estrato.ToString();
                     txtConsumo.Text = predio.Consumo.ToString();
-                    txtSubsidio.Text = predio.Subsidio.ToString();
-                    txtVivienda.Text = predio.TipoVivienda;
+                    //txtSubsidio.Text = predio.Subsidio.ToString();
+                    txtComercio.Text = predio.TipoComercio;
                 }
                 else
                 {
@@ -192,6 +192,11 @@ namespace Cliente
         }
 
         private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtConsumo_TextChanged(object sender, EventArgs e)
         {
 
         }
