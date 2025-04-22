@@ -101,37 +101,19 @@ public class Servicio implements IServicio {
 
     @Override
     public Comercial actualizarPredioComercial(int index, String propietario, String direccion, int estrato, double consumo, String tipoComercio, String codigoLicencia) {
-        // Validaciones defensivas
+        // Validar solo el índice
         if (index <= 0 || index > data.getComerciales().size()) {
             throw new IllegalArgumentException("El índice del predio es inválido.");
-        }
-        if (propietario == null || propietario.isEmpty()) {
-            throw new IllegalArgumentException("El nombre del propietario no puede estar vacío.");
-        }
-        if (direccion == null || direccion.isEmpty()) {
-            throw new IllegalArgumentException("La dirección no puede estar vacía.");
-        }
-        if (estrato < 1 || estrato > 6) {
-            throw new IllegalArgumentException("El estrato debe estar entre 1 y 6.");
-        }
-        if (consumo < 0) {
-            throw new IllegalArgumentException("El consumo no puede ser negativo.");
-        }
-        if (tipoComercio == null || tipoComercio.isEmpty()) {
-            throw new IllegalArgumentException("El tipo de comercio no puede estar vacío.");
-        }
-        if (codigoLicencia == null || codigoLicencia.isEmpty()) {
-            throw new IllegalArgumentException("El tipo de comercio no puede estar vacío.");
         }
 
         // Actualizar valores
         Comercial pre = (Comercial) data.getComerciales().get(index - 1);
         pre.setConsumo(consumo);
-        pre.setDireccion(direccion);
+        pre.setDireccion(direccion != null ? direccion : "");
         pre.setEstrato(estrato);
-        pre.setPropietario(propietario);
-        pre.setTipoComercio(tipoComercio);
-        pre.setCodigoLicenciaComercial(codigoLicencia);
+        pre.setPropietario(propietario != null ? propietario : "");
+        pre.setTipoComercio(tipoComercio != null ? tipoComercio : "");
+        pre.setCodigoLicenciaComercial(codigoLicencia != null ? codigoLicencia : "");
 
         // Recalcular factura
         double valorFactura = pre.calcularPago();

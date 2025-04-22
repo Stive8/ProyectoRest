@@ -25,24 +25,7 @@ public class PredioController {
         System.out.println("Petición POST recibida");
 
         try {
-            /*
-            // Validación de campos obligatorios
-            if (request.getPropietario() == null || request.getPropietario().trim().isEmpty() ||
-                    request.getDireccion() == null || request.getDireccion().trim().isEmpty() ||
-                    request.getEstrato() < 0 || request.getEstrato() > 6 ||
-                    request.getConsumo() < 0 || request.getConsumo() == null) {
-                return new ResponseEntity<>("Datos incompletos en la solicitud", HttpStatus.BAD_REQUEST);
-            }
 
-            // Validación de fecha de registro
-            if (request.getFechaRegistro() == null) {
-                return new ResponseEntity<>("La fecha de registro no puede estar vacía", HttpStatus.BAD_REQUEST);
-            }
-
-            // Validación de números positivos
-            if (request.getEstrato() < 0 || request.getConsumo() < 0 || request.getSubsidio() < 0) {
-                return new ResponseEntity<>("Valores numéricos no pueden ser negativos", HttpStatus.BAD_REQUEST);
-            } */
             Comercial comercial = servicio.crearPredioComercial(
                     request.getPropietario(),
                     request.getDireccion(),
@@ -71,13 +54,12 @@ public class PredioController {
         try {
             System.out.println("Petición GET");
 
-            var predio = servicio.buscarPredioComercialPorId(value);
-
-            if (predio == null) {
+            Optional<Comercial> predioOpt = servicio.buscarPredioComercialPorId(value);
+            if (predioOpt.isEmpty()) {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body("El predio con ID " + value + " no existe.");
             }
+            return new ResponseEntity<>(predioOpt.get(), HttpStatus.OK);
 
-            return new ResponseEntity<>(predio, HttpStatus.OK);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Petición GET con error");
@@ -106,7 +88,6 @@ public class PredioController {
 
     @PutMapping("actualizar")
     public ResponseEntity<?> actualizarPredio(@RequestBody ActualizarComercialRequest request) {
-
         Optional<Comercial> existenteOpt = servicio.buscarPredioComercialPorId(request.getIndex());
 
         if (existenteOpt.isEmpty()) {
@@ -122,11 +103,9 @@ public class PredioController {
                     request.getEstrato(),
                     request.getConsumo(),
                     request.getTipoComercio(),
-                    request.getCodigoLicencia()
+                    request.getNumeroLicenciaComercial()
             );
-
             return ResponseEntity.ok("Predio actualizado correctamente");
-
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)

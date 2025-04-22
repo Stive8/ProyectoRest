@@ -11,15 +11,11 @@ import lombok.ToString;
 @Setter
 @ToString
 public class ActualizarComercialRequest {
-
-
     private int index;
     private String propietario;
     private String direccion;
     private int estrato;
     private double consumo;
     private String tipoComercio;
-    private String codigoLicencia;
-
-
+    private String numeroLicenciaComercial;
 }

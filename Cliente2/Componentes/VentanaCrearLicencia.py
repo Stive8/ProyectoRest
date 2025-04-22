@@ -1,68 +1,76 @@
 import tkinter as tk
-from tkinter import ttk
+from tkinter import messagebox
+import requests
 
 class VentanaCrearLicencia(tk.Toplevel):
     def __init__(self, master=None):
         super().__init__(master)
         self.title("Crear Licencia Comercial")
-        self.geometry("400x400")
+        self.geometry("400x350")
         self.resizable(False, False)
 
         self.crear_componentes()
         self.centrar_ventana()
 
     def crear_componentes(self):
-        # Título centrado
-        titulo = tk.Label(self, text="Crear Licencia Comercial", font=("Arial", 16))
-        titulo.pack(pady=20)
+        tk.Label(self, text="Crear Licencia Comercial", font=("Arial", 16, "bold")).pack(pady=15)
 
-        # Contenedor para los campos
         form_frame = tk.Frame(self)
         form_frame.pack(pady=10)
 
-        # Campo 1
-        tk.Label(form_frame, text="Número de Licencia:").grid(row=0, column=0, sticky="w", padx=5, pady=5)
-        self.entry1 = tk.Entry(form_frame)
-        self.entry1.grid(row=0, column=1, padx=5, pady=5)
+        campos = [
+            ("Código de Licencia:", "codigo"),
+            ("Representante Legal:", "representanteLegal"),
+            ("Fecha de Vencimiento (YYYY-MM-DD):", "fechaVencimiento"),
+            ("ID del Predio:", "idPredio"),
+        ]
 
-        # Campo 2
-        tk.Label(form_frame, text="Fecha de Expedición:").grid(row=1, column=0, sticky="w", padx=5, pady=5)
-        self.entry2 = tk.Entry(form_frame)
-        self.entry2.grid(row=1, column=1, padx=5, pady=5)
+        self.entries = {}
 
-        # Campo 3
-        tk.Label(form_frame, text="Fecha de Vencimiento:").grid(row=2, column=0, sticky="w", padx=5, pady=5)
-        self.entry3 = tk.Entry(form_frame)
-        self.entry3.grid(row=2, column=1, padx=5, pady=5)
+        for i, (label_text, key) in enumerate(campos):
+            tk.Label(form_frame, text=label_text).grid(row=i, column=0, sticky="e", padx=5, pady=5)
+            entry = tk.Entry(form_frame)
+            entry.grid(row=i, column=1, padx=5, pady=5)
+            self.entries[key] = entry
 
-        # Campo 4
-        tk.Label(form_frame, text="Estado:").grid(row=3, column=0, sticky="w", padx=5, pady=5)
-        self.entry4 = tk.Entry(form_frame)
-        self.entry4.grid(row=3, column=1, padx=5, pady=5)
-
-        # Botón centrado
-        crear_btn = tk.Button(self, text="Crear Licencia Comercial", command=self.crear_licencia)
-        crear_btn.pack(pady=20)
+        tk.Button(self, text="Crear Licencia", command=self.crear_licencia).pack(pady=15)
 
     def crear_licencia(self):
-        # Aquí puedes manejar la lógica de creación
-        print("Licencia creada con los siguientes datos:")
-        print("Campo 1:", self.entry1.get())
-        print("Campo 2:", self.entry2.get())
-        print("Campo 3:", self.entry3.get())
-        print("Campo 4:", self.entry4.get())
+        codigo = self.entries["codigo"].get().strip()
+        representante = self.entries["representanteLegal"].get().strip()
+        fecha = self.entries["fechaVencimiento"].get().strip()
+        id_predio = self.entries["idPredio"].get().strip()
+
+        if not codigo or not representante or not fecha or not id_predio:
+            messagebox.showerror("Error", "Todos los campos son obligatorios.")
+            return
+
+        if not id_predio.isdigit():
+            messagebox.showerror("Error", "El ID del predio debe ser un número.")
+            return
+
+        data = {
+            "codigo": codigo,
+            "representanteLegal": representante,
+            "fechaVencimiento": fecha,
+            "idPredio": int(id_predio)
+        }
+
+        try:
+            response = requests.post("http://localhost:8081/licencia/crear", json=data)
+
+            if response.status_code == 200:
+                messagebox.showinfo("Éxito", "Licencia creada exitosamente.")
+                self.destroy()
+            else:
+                messagebox.showerror("Error", f"Error del servidor: {response.text}")
+        except Exception as e:
+            messagebox.showerror("Error", f"No se pudo conectar con el servidor: {str(e)}")
 
     def centrar_ventana(self):
-        self.update_idletasks()  # Asegura que la ventana se haya creado completamente
-
+        self.update_idletasks()
         ancho = self.winfo_width()
         alto = self.winfo_height()
-        ancho_pantalla = self.winfo_screenwidth()
-        alto_pantalla = self.winfo_screenheight()
-
-        x = (ancho_pantalla // 2) - (ancho // 2)
-        y = (alto_pantalla // 2) - (alto // 2)
-
+        x = (self.winfo_screenwidth() // 2) - (ancho // 2)
+        y = (self.winfo_screenheight() // 2) - (alto // 2)
         self.geometry(f"{ancho}x{alto}+{x}+{y}")
-
-    

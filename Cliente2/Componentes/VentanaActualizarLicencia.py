@@ -1,88 +1,168 @@
 import tkinter as tk
 from tkinter import messagebox
+import requests
+import json
+
+class LicenciaConsulta:
+    """Clase para manejar la lógica de consulta y actualización de licencias al servidor."""
+    
+    BASE_URL = "http://localhost:8081/licencia"
+
+    @staticmethod
+    def consultar_licencia_por_codigo(codigo):
+        """
+        Consulta una licencia comercial por su código.
+        Retorna la licencia si se encuentra, o None si no existe o hay un error.
+        """
+        try:
+            url = f"{LicenciaConsulta.BASE_URL}/buscar/{codigo}"
+            response = requests.get(url, timeout=5)
+
+            if response.status_code == 200:
+                return response.json()
+            elif response.status_code == 404:
+                return None
+            else:
+                raise Exception(f"Error del servidor: Código {response.status_code}")
+
+        except requests.exceptions.Timeout:
+            raise Exception("Tiempo de espera agotado al conectar con el servidor")
+        except requests.exceptions.ConnectionError:
+            raise Exception("Error de conexión con el servidor")
+        except requests.exceptions.RequestException as e:
+            raise Exception(f"Error en la solicitud: {str(e)}")
+
+    @staticmethod
+    def actualizar_licencia(codigo, representante_legal, fecha_vencimiento):
+        """
+        Actualiza una licencia comercial en el servidor.
+        Retorna True si la actualización es exitosa, False en caso contrario.
+        """
+        try:
+            url = f"{LicenciaConsulta.BASE_URL}/actualizar"
+            payload = {
+                "codigo": codigo,
+                "representanteLegal": representante_legal,
+                "fechaVencimiento": fecha_vencimiento
+            }
+            headers = {"Content-Type": "application/json"}
+            response = requests.put(url, data=json.dumps(payload), headers=headers, timeout=5)
+
+            if response.status_code == 200:
+                return True
+            elif response.status_code == 404:
+                return False
+            else:
+                raise Exception(f"Error del servidor: Código {response.status_code}")
+
+        except requests.exceptions.Timeout:
+            raise Exception("Tiempo de espera agotado al conectar con el servidor")
+        except requests.exceptions.ConnectionError:
+            raise Exception("Error de conexión con el servidor")
+        except requests.exceptions.RequestException as e:
+            raise Exception(f"Error en la solicitud: {str(e)}")
 
 class VentanaActualizarLicencia(tk.Toplevel):
     def __init__(self, master=None):
         super().__init__(master)
         self.title("Actualizar Licencia Comercial")
-        self.geometry("400x420")
+        self.geometry("400x300")
         self.resizable(False, False)
 
-        self.crear_componentes()
-        self.centrar_ventana()
+        # Etiquetas y campos
+        tk.Label(self, text="Número de Licencia:").grid(row=0, column=0, padx=10, pady=10, sticky="w")
+        self.entry_numero = tk.Entry(self)
+        self.entry_numero.grid(row=0, column=1, padx=10, pady=10)
 
-    def crear_componentes(self):
-        titulo = tk.Label(self, text="Actualizar Licencia Comercial", font=("Arial", 16))
-        titulo.pack(pady=20)
+        tk.Label(self, text="Representante Legal:").grid(row=1, column=0, padx=10, pady=10, sticky="w")
+        self.entry_representante = tk.Entry(self, state="disabled")
+        self.entry_representante.grid(row=1, column=1, padx=10, pady=10)
 
-        form_frame = tk.Frame(self)
-        form_frame.pack(pady=10)
+        tk.Label(self, text="Fecha de Vencimiento:").grid(row=2, column=0, padx=10, pady=10, sticky="w")
+        self.entry_fecha_vencimiento = tk.Entry(self, state="disabled")
+        self.entry_fecha_vencimiento.grid(row=2, column=1, padx=10, pady=10)
 
-        # Campo: Número de Licencia (editable)
-        tk.Label(form_frame, text="Número de Licencia:").grid(row=0, column=0, sticky="e", padx=5, pady=5)
-        self.entry_numero = tk.Entry(form_frame)
-        self.entry_numero.grid(row=0, column=1, padx=5, pady=5)
+        # Botones
+        self.btn_consultar = tk.Button(self, text="Consultar", command=self.consultar_licencia)
+        self.btn_consultar.grid(row=3, column=0, padx=10, pady=10)
 
-        # Campo: Fecha Expedición (editable)
-        tk.Label(form_frame, text="Fecha de Expedición:").grid(row=1, column=0, sticky="e", padx=5, pady=5)
-        self.entry_expedicion = tk.Entry(form_frame)
-        self.entry_expedicion.grid(row=1, column=1, padx=5, pady=5)
-
-        # Campo: Fecha Vencimiento (editable)
-        tk.Label(form_frame, text="Fecha de Vencimiento:").grid(row=2, column=0, sticky="e", padx=5, pady=5)
-        self.entry_vencimiento = tk.Entry(form_frame)
-        self.entry_vencimiento.grid(row=2, column=1, padx=5, pady=5)
-
-        # Campo: Estado (editable)
-        tk.Label(form_frame, text="Estado:").grid(row=3, column=0, sticky="e", padx=5, pady=5)
-        self.entry_estado = tk.Entry(form_frame)
-        self.entry_estado.grid(row=3, column=1, padx=5, pady=5)
-
-        # Botón: Consultar
-        btn_consultar = tk.Button(self, text="Consultar", command=self.consultar_licencia)
-        btn_consultar.pack(pady=10)
-
-        # Botón: Actualizar
-        btn_actualizar = tk.Button(self, text="Actualizar", command=self.actualizar_licencia)
-        btn_actualizar.pack(pady=5)
+        self.btn_actualizar = tk.Button(self, text="Actualizar", command=self.actualizar_licencia, state="disabled")
+        self.btn_actualizar.grid(row=3, column=1, padx=10, pady=10)
 
     def consultar_licencia(self):
-        numero = self.entry_numero.get()
-        if numero == "12345":
-            self.entry_expedicion.delete(0, tk.END)
-            self.entry_expedicion.insert(0, "2024-01-01")
+        """Maneja la consulta de una licencia al servidor."""
+        codigo = self.entry_numero.get().strip()
 
-            self.entry_vencimiento.delete(0, tk.END)
-            self.entry_vencimiento.insert(0, "2025-01-01")
-
-            self.entry_estado.delete(0, tk.END)
-            self.entry_estado.insert(0, "Activa")
-        else:
-            messagebox.showwarning("No encontrada", f"No se encontró licencia con número: {numero}")
-            self.limpiar_campos()
-
-    def actualizar_licencia(self):
-        numero = self.entry_numero.get()
-        expedicion = self.entry_expedicion.get()
-        vencimiento = self.entry_vencimiento.get()
-        estado = self.entry_estado.get()
-
-        if not numero or not expedicion or not vencimiento or not estado:
-            messagebox.showwarning("Campos incompletos", "Por favor, completa todos los campos.")
+        if not codigo:
+            messagebox.showwarning("Campo vacío", "Por favor ingrese el número de licencia.")
             return
 
-        # Aquí se haría el PUT real por REST
-        messagebox.showinfo("Actualizado", f"Licencia {numero} actualizada correctamente.")
+        try:
+            licencia = LicenciaConsulta.consultar_licencia_por_codigo(codigo)
 
-    def limpiar_campos(self):
-        self.entry_expedicion.delete(0, tk.END)
-        self.entry_vencimiento.delete(0, tk.END)
-        self.entry_estado.delete(0, tk.END)
+            if licencia:
+                # Habilitar campos para edición
+                self.entry_representante.config(state="normal")
+                self.entry_fecha_vencimiento.config(state="normal")
+                self.btn_actualizar.config(state="normal")
 
-    def centrar_ventana(self):
-        self.update_idletasks()
-        ancho = self.winfo_width()
-        alto = self.winfo_height()
-        x = (self.winfo_screenwidth() // 2) - (ancho // 2)
-        y = (self.winfo_screenheight() // 2) - (alto // 2)
-        self.geometry(f"{ancho}x{alto}+{x}+{y}")
+                # Limpiar campos
+                self.entry_representante.delete(0, tk.END)
+                self.entry_fecha_vencimiento.delete(0, tk.END)
+
+                # Insertar datos
+                self.entry_representante.insert(0, licencia.get("representanteLegal", ""))
+                self.entry_fecha_vencimiento.insert(0, licencia.get("fechaVencimiento", ""))
+
+                # Guardar el código para usarlo en la actualización
+                self.codigo_licencia = codigo
+            else:
+                messagebox.showinfo("No encontrado", f"No se encontró una licencia con el código {codigo}.")
+                # Limpiar y deshabilitar campos
+                self.entry_representante.config(state="normal")
+                self.entry_fecha_vencimiento.config(state="normal")
+                self.entry_representante.delete(0, tk.END)
+                self.entry_fecha_vencimiento.delete(0, tk.END)
+                self.entry_representante.config(state="disabled")
+                self.entry_fecha_vencimiento.config(state="disabled")
+                self.btn_actualizar.config(state="disabled")
+
+        except Exception as e:
+            messagebox.showerror("Error", str(e))
+
+    def actualizar_licencia(self):
+        """Maneja la actualización de una licencia en el servidor."""
+        representante_legal = self.entry_representante.get().strip()
+        fecha_vencimiento = self.entry_fecha_vencimiento.get().strip()
+
+        if not representante_legal or not fecha_vencimiento:
+            messagebox.showwarning("Campos vacíos", "Por favor complete todos los campos.")
+            return
+
+        try:
+            exito = LicenciaConsulta.actualizar_licencia(
+                self.codigo_licencia,
+                representante_legal,
+                fecha_vencimiento
+            )
+
+            if exito:
+                messagebox.showinfo("Éxito", "Licencia actualizada correctamente.")
+                # Limpiar y deshabilitar campos
+                self.entry_numero.delete(0, tk.END)
+                self.entry_representante.delete(0, tk.END)
+                self.entry_fecha_vencimiento.delete(0, tk.END)
+                self.entry_representante.config(state="disabled")
+                self.entry_fecha_vencimiento.config(state="disabled")
+                self.btn_actualizar.config(state="disabled")
+            else:
+                messagebox.showinfo("No encontrado", f"No se encontró una licencia con el código {self.codigo_licencia}.")
+
+        except Exception as e:
+            messagebox.showerror("Error", str(e))
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.withdraw()  # Ocultar ventana principal
+    ventana = VentanaActualizarLicencia(root)
+    ventana.mainloop()
