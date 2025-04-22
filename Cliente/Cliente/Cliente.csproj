@@ -118,6 +118,36 @@
     <Compile Include="GUIActualizar.Designer.cs">
       <DependentUpon>GUIActualizar.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUIActualizarLicencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIActualizarLicencia.Designer.cs">
+      <DependentUpon>GUIActualizarLicencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIConsultarLicencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIConsultarLicencia.Designer.cs">
+      <DependentUpon>GUIConsultarLicencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUICrearLicencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUICrearLicencia.Designer.cs">
+      <DependentUpon>GUICrearLicencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIEliminarLicencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIEliminarLicencia.Designer.cs">
+      <DependentUpon>GUIEliminarLicencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUIListarLicencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUIListarLicencia.Designer.cs">
+      <DependentUpon>GUIListarLicencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Request.cs" />
@@ -139,6 +169,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUIActualizar.resx">
       <DependentUpon>GUIActualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIActualizarLicencia.resx">
+      <DependentUpon>GUIActualizarLicencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIConsultarLicencia.resx">
+      <DependentUpon>GUIConsultarLicencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUICrearLicencia.resx">
+      <DependentUpon>GUICrearLicencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIEliminarLicencia.resx">
+      <DependentUpon>GUIEliminarLicencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUIListarLicencia.resx">
+      <DependentUpon>GUIListarLicencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

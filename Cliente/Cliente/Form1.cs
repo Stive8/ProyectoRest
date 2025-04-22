@@ -75,5 +75,35 @@ namespace Cliente
             MessageBox.Show("Integrantes:\n Stiven Alvarez \n Brayhan Ortegon \n Juanita Rodriguez", "Acerca de", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void toolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            GUICrearLicencia gUICrearLicencia = new GUICrearLicencia();
+            gUICrearLicencia.Show();
+
+        }
+
+        private void toolStripMenuItem9_Click(object sender, EventArgs e)
+        {
+            GUIEliminarLicencia gUIEliminarLicencia = new GUIEliminarLicencia();
+            gUIEliminarLicencia.Show();
+        }
+
+        private void toolStripMenuItem10_Click(object sender, EventArgs e)
+        {
+            GUIConsultarLicencia gUIConsultarLicencia = new GUIConsultarLicencia();
+            gUIConsultarLicencia.Show();
+        }
+
+        private void actualizarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            GUIActualizarLicencia gUIActualizarLicencia = new GUIActualizarLicencia();
+            gUIActualizarLicencia.Show();
+        }
+
+        private void toolStripMenuItem11_Click(object sender, EventArgs e)
+        {
+            GUIListarLicencia gUIListarLicencia = new GUIListarLicencia();
+            gUIListarLicencia.Show();
+        }
     }
 }

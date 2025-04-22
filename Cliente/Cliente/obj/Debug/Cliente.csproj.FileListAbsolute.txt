@@ -112,3 +112,8 @@ C:\Users\PC\Downloads\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.csproj.Up2D
 C:\Users\PC\Downloads\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.exe
 C:\Users\PC\Downloads\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.pdb
 C:\Users\Usuario\Documents\GitHub\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.GUIActualizar.resources
+C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.GUICrearLicencia.resources
+C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.GUIEliminarLicencia.resources
+C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.GUIConsultarLicencia.resources
+C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.GUIActualizarLicencia.resources
+C:\Users\ASUS\Documents\Univerisdad\AplicacionesEmpresariales\ProyectoRest\Cliente\Cliente\obj\Debug\Cliente.GUIListarLicencia.resources
